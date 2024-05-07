@@ -2,8 +2,6 @@
 
 Overleaf: https://www.overleaf.com/read/jcgftypvjsgt#b04cf7
 
-Notes
-
 ## Models
 
 
