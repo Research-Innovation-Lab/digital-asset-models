@@ -25,7 +25,7 @@ Overleaf: https://www.overleaf.com/read/jcgftypvjsgt#b04cf7
 - Relative Valuation Models (Network Value to Transactions) (Comparative Analysis)
 - Absolute Valuation Models - Equation of Exchange (Intrinsic Value)
 
-**5e. Price Prediction Techniques**
+**5e. Price Prediction**
 - LSTM
 - ARIMA
 
