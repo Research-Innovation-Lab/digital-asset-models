@@ -4,24 +4,37 @@ Overleaf: https://www.overleaf.com/read/jcgftypvjsgt#b04cf7
 
 ## Outline
 
-Introduction
+**1. Comprehensive Literature Review**
 
-**Risk and Return**
+**2. Examining Existing Alternative Asset Models and Their Key Principles**
+
+**3. Digital Asset Landscape: Exploring the Unique Characteristics and Challenges Associated with Investing in Digital Assets**
+
+**4. Analysis of Different Alternative Asset Models and Their Potential Application to Digital Assets**
+
+**4a. Risk and Return**
   - Traditional Asset Models (specifically, CAPM)
-**Volatility**
+
+**4b. Volatility**
 - Volatility Models (GARCH, Stochastic Model)
 
-**Valuation**
+**4c. Valuation**
 - Relative Valuation Models (Network Value to Transactions) (Comparative Analysis)
 
-**Intrinsic Value**
+**4d. Intrinsic Value**
 - Absolute Valuation Models - Equation of Exchange (Intrinsic Value)
 
-**Price Prediction**
+**4e. Price Prediction**
 - Price Prediction (LSTM, ARIMA)
 
-**Portfolio Optimization**
+**4f. Portfolio Optimization**
 - Modern Portfolio Theory
+
+**5. Conclusion**
+
+**Notes and References**
+
+**Appendix A**
 
 ## Details
 
