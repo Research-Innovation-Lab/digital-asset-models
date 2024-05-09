@@ -4,40 +4,41 @@ Overleaf: https://www.overleaf.com/read/jcgftypvjsgt#b04cf7
 
 ## Outline
 
-**1. Comprehensive Literature Review**
+**1. Introduction**
 
-**2. Examining Existing Alternative Asset Models and Their Key Principles**
+**2. Comprehensive Literature Review**
 
-**3. Digital Asset Landscape: Exploring the Unique Characteristics and Challenges Associated with Investing in Digital Assets**
+**3. Examining Existing Alternative Asset Models and Their Key Principles**
 
-**4. Analysis of Different Alternative Asset Models and Their Potential Application to Digital Assets**
+**4. Digital Asset Landscape**
 
-**4a. Risk and Return**
-  - Traditional Asset Models (specifically, CAPM)
+**5. Analysis of Different Alternative Asset Models and Their Potential Application to Digital Assets**
 
-**4b. Volatility**
-- Volatility Models (GARCH, Stochastic Model)
+**5a. Risk and Return Analysis**
+- CAPM - Traditional Asset Models
 
-**4c. Valuation**
+**5b. Volatility Analysis**
+- GARCH
+- Stochastic Model
+
+**5c. Valuation Techniques**
 - Relative Valuation Models (Network Value to Transactions) (Comparative Analysis)
-
-**4d. Intrinsic Value**
 - Absolute Valuation Models - Equation of Exchange (Intrinsic Value)
 
-**4e. Price Prediction**
-- Price Prediction (LSTM, ARIMA)
+**5e. Price Prediction Techniques**
+- LSTM
+- ARIMA
 
-**4f. Portfolio Optimization**
+**5f. Portfolio Management Strategies**
 - Modern Portfolio Theory
 
-**5. Conclusion**
+**6. Conclusion**
 
 **Notes and References**
 
 **Appendix A**
 
-## Details
-
+## Further Examniation of Alternative Asset Models
 
 **Traditional Asset Models (CAPM):**
 This section can provide a foundational understanding of traditional asset pricing models and their relevance to cryptocurrencies. CAPM, in particular, can serve as a benchmark for evaluating the risk and return of cryptocurrencies relative to the broader market. You can discuss the applicability of CAPM assumptions to cryptocurrency markets and potential challenges in estimating beta and expected returns.
@@ -57,7 +58,7 @@ Price prediction models are essential for investors and traders seeking to forec
 **Portfolio Optimization (Modern Portfolio):**
 Portfolio optimization models like Modern Portfolio Theory provide a framework for constructing diversified portfolios that balance risk and return. This section can demonstrate how traditional portfolio optimization techniques are adapted to incorporate cryptocurrencies, considering factors like volatility, correlation, and expected returns of digital assets. Practical considerations such as liquidity constraints and transaction costs should also be addressed.
 
-## Models
+## Possible Models To Consider
 
 ### Time Series Forecasting 
 **Autoregressive Integrated Moving Average (ARIMA)**: ARIMA models are commonly used for time series forecasting. They capture the linear dependencies between observations and can be applied to predict future cryptocurrency prices based on historical data.
@@ -88,16 +89,13 @@ https://www.sciencedirect.com/science/article/pii/S1057521922001776#:~:text=The%
 **Volatility Models**: Consider volatility models such as GARCH (Generalized Autoregressive Conditional Heteroskedasticity) or stochastic volatility models. These models are widely used in finance to understand and forecast asset price volatility, which is particularly relevant for cryptocurrencies known for their high volatility.
 
 https://medium.com/@john_19547/valuing-crypto-assets-using-a-dcf-model-bc6297b0bd25#:~:text=Most%20crypto%20experts%20do%20not,call%20this%20an%20Ether%20flow.
-
 Relative Valuation Models - Network Value to Transactions
 Absolute Valuation Models - Equation of Exchange
 
 https://medium.com/@mahupperich/application-of-the-garch-model-on-financial-time-series-83131414ee2f
 https://www.diva-portal.org/smash/get/diva2:941043/FULLTEXT01.pdf
-
 - GARCH + ARCH
 
-- 
 **Network Models**: Explore network-based models to analyze the relationships and dynamics within the cryptocurrency ecosystem. Graph theory, network analysis, and complex systems modeling can be applied to understand the interactions between different cryptocurrencies, exchanges, and market participants.
 
 **Behavioral Finance Models**: Investigate behavioral finance models to account for psychological biases and irrational behavior in cryptocurrency markets. Prospect theory, herding behavior models, or sentiment analysis can provide insights into market sentiment and investor behavior, which can impact cryptocurrency prices.
