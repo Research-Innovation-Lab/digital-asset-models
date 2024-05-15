@@ -38,7 +38,7 @@ Overleaf: https://www.overleaf.com/read/jcgftypvjsgt#b04cf7
 
 **Appendix A**
 
-## Further Examniation of Alternative Asset Models
+## Further Examination of Alternative Asset Models
 
 **Traditional Asset Models (CAPM):**
 This section can provide a foundational understanding of traditional asset pricing models and their relevance to cryptocurrencies. CAPM, in particular, can serve as a benchmark for evaluating the risk and return of cryptocurrencies relative to the broader market. You can discuss the applicability of CAPM assumptions to cryptocurrency markets and potential challenges in estimating beta and expected returns.
