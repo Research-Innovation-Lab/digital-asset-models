@@ -2,6 +2,25 @@
 
 Overleaf: https://www.overleaf.com/read/jcgftypvjsgt#b04cf7
 
+## Project Status
+
+This document tracks the status of our project.
+
+| Status      | Working | Finished | In Review |
+|-------------|---------|----------|-----------|
+| Introduction     | [ X]     | [ ]      | [ ]       |
+| Comprehensive Literature Review | [ X ]     | [ ]      | [ ]       |
+| Examining Existing Alternative Asset Models and Their Key Principles | [ X ]     | [ ]      | [ ]       |
+| Digital Asset Landscape | [ X ]     | [ ]      | [ ]       |
+| Analysis of Different Alternative Asset Models and Their Potential Application to Digital Assets | [X  ]     | [ ]      | [ ]       |
+| Risk and Return Analysis | [ ]     | [ X ]      | [ ]       |
+| Volatility Analysis | [ X ]     | [ ]      | [ ]       |
+| Valuation Techniques | [ X ]     | [ ]      | [ ]       |
+| Price Prediction | [ X ]     | [ ]      | [ ]       |
+| Portfolio Management Strategies | [ X ]     | [ ]      | [ ]       |
+| Conclusion | [ X ]     | [ ]      | [ ]       |
+
+
 ## Outline
 
 **1. Introduction**
@@ -19,7 +38,7 @@ Overleaf: https://www.overleaf.com/read/jcgftypvjsgt#b04cf7
 
 **5b. Volatility Analysis**
 - GARCH
-- Stochastic Model
+- Stochastic Model - GBM
 
 **5c. Valuation Techniques**
 - Relative Valuation Models (Network Value to Transactions) (Comparative Analysis)
@@ -37,6 +56,7 @@ Overleaf: https://www.overleaf.com/read/jcgftypvjsgt#b04cf7
 **Notes and References**
 
 **Appendix A**
+
 
 ## Further Examination of Alternative Asset Models
 
