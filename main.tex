@@ -152,7 +152,64 @@ The data is fetched from Yahoo Finance via yfinance. \cite{yfinance}. In terms o
 
 \section{Risk and Return Analysis}
 
-Need more info.
+Investing in alternative assets offers unique opportunities and challenges, particularly in the realm of risk and return. Unlike traditional assets such as stocks and bonds, alternative assets—including private equity, hedge funds, real estate, and commodities—often exhibit different risk profiles and return characteristics. This distinct behavior necessitates a thorough analysis to understand how these assets can fit into an overall investment strategy and contribute to portfolio diversification and performance.
+
+When assessing the risk and return of alternative assets, it is crucial to consider factors such as liquidity risk, market risk, and operational risk, which may differ significantly from those associated with traditional investments. Additionally, the return potential of alternative assets can be influenced by factors such as leverage, market inefficiencies, and unique economic exposures.
+
+To systematically evaluate the risk and return characteristics of alternative assets, financial models and theories can be employed. One of the foundational models in finance for assessing the relationship between risk and expected return is the Capital Asset Pricing Model (CAPM).
+
+The Capital Asset Pricing Model (CAPM) is a cornerstone of modern financial theory, providing a framework for understanding the trade-off between risk and return for individual assets in a diversified portfolio. Developed by William Sharpe in the 1960s, CAPM posits that the expected return of an asset is directly related to its systematic risk, as measured by beta (\(\beta\)). Beta represents the sensitivity of an asset's returns to the returns of the overall market, capturing the asset's exposure to market-wide risk factors.
+
+According to CAPM, the expected return on an asset can be expressed as:
+
+\[
+E(R_i) = R_f + \beta_i (E(R_m) - R_f)
+\]
+
+where:
+
+$ \bullet E(R_i) $ is the expected return of the asset,
+
+$ \bullet R_f $ is the risk-free rate,
+
+$ \bullet \beta_i $ is the beta of the asset,
+
+$ \bullet E(R_m) $ is the expected return of the market,
+
+$ \bullet E(R_m) - R_f $ is the market risk premium.
+
+
+\hfill \break
+
+\paragraph{Calculating CAPM for Cryptocurrencies}
+
+\hfill \break
+
+1. Determine the Risk-Free Rate (\(R_f\))
+
+The risk-free rate is typically the return on government bonds, such as U.S. Treasury bills. For cryptocurrencies, we used the yield on a 10-year U.S. Treasury bond as a proxy for the risk-free rate.
+
+2. Calculate the Expected Market Return (\(R_m\))
+
+The expected market return can be the average return of a broad cryptocurrency market index. For this instance, we used the Bitwise 10 Crypto Index Fund (BITW) \cite{bitw}.
+
+3. Calculate the Beta (\(\beta\))
+
+Beta measures the volatility of a cryptocurrency relative to the market. 
+
+To calculate beta:
+
+\begin{itemize}
+    \item Collect Historical Price Data: Obtain historical daily prices for each cryptocurrency and the chosen market index.
+    \item Calculate Returns: Compute the daily returns for each cryptocurrency and the market index.
+    \item Run a Regression Analysis: Perform a linear regression with the cryptocurrency returns as the dependent variable and the market index returns as the independent variable. The slope of the regression line is the beta.
+\end{itemize}
+
+
+4. Compute the Market Risk Premium (\(R_m - R_f\))
+
+The market risk premium is the difference between the expected market return and the risk-free rate.
+
 
 \section{Volatility Analysis}
 
