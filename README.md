@@ -20,7 +20,14 @@ This document tracks the status of our project.
 | Portfolio Management Strategies | [ X ]     | [ ]      | [ ]       |
 | Conclusion | [ X ]     | [ ]      | [ ]       |
 
+## Asset Classes
+- Stocks (5 TOP INDIVDUAL STOCKS)
+- ETF (S&P500)
+- Bonds 
+- Real Estate (INDEX FUND / MUTUAL FUND)
+- Cryptocurrency (10+ cryptocurrencies, BITW (Bitwise 10 Crypto Index)
 
+- 
 ## Outline
 
 **1. Introduction**
@@ -42,6 +49,10 @@ This document tracks the status of our project.
 
 **5. Process and Results**
 - actual results and how we did it
+
+CAPM 
+- equivalent of risk-free rate in cryptocurrency
+- stocks, commodities, real estate, no bonds (YTM)
 
 **5a. Model #1**
 
