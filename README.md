@@ -78,17 +78,39 @@ real estate index
 **6b. Volatility Analysis**
 - GARCH
 - Stochastic Model - GBM
+- find another model
+- possibly more models
+
+Yes, they can be applied to some extent, show the volatility of cryptocurrency and volatility of stocks
 
 **6c. Valuation Techniques**
 - Relative Valuation Models (Network Value to Transactions) (Comparative Analysis)
 - Absolute Valuation Models - Equation of Exchange (Intrinsic Value)
 
+- Dividend Discount Model (DDM)
+- Discounted Cash Flow
+
+- P/E Ratio (find crypto equivalent)
+- https://defiblog.substack.com/p/51-crypto-metrics-you-must-know-about
+
 **6d. Price Prediction**
 - LSTM
 - ARIMA
+- find another model
+
+- Results are shown via MSE, RMSE, MAE.
+- average returns and correlation,
+Display table and results, some graphs, and show relationship in analysis.
+
+
+**Optional**
 
 **6e. Portfolio Management Strategies**
+- Sharpe Ratio
+
 - Modern Portfolio Theory
+
+- show the ratios of different asset classes
 
 
 **Conclusion**
