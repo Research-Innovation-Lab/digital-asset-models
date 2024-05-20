@@ -40,28 +40,47 @@ This document tracks the status of our project.
 - what kind of data and how
 - where the data is coming from
 
-**5. Analysis of Different Alternative Asset Models and Their Potential Application to Digital Assets**
+**5. Process and Results**
 - actual results and how we did it
 
-**5a. Risk and Return Analysis**
+**5a. Model #1**
+
+**5b. Model #2**
+
+**5c. Model #3**
+
+**5d. Model #4**
+
+**5e. Model #5**
+
+**6. Analysis**
+
+**6a. Risk and Return Analysis**
 - CAPM - Traditional Asset Models
 
-**5b. Volatility Analysis**
+risk and return of top 10 cryptocurrencies
+compare to stocks for same period, 10 stocks, and what's the risk and return of the top 10 stocks
+compare bonds over the same time period
+commodities same time period (gold, silver)
+real estate index
+
+**6b. Volatility Analysis**
 - GARCH
 - Stochastic Model - GBM
 
-**5c. Valuation Techniques**
+**6c. Valuation Techniques**
 - Relative Valuation Models (Network Value to Transactions) (Comparative Analysis)
 - Absolute Valuation Models - Equation of Exchange (Intrinsic Value)
 
-**5d. Price Prediction**
+**6d. Price Prediction**
 - LSTM
 - ARIMA
 
-**5e. Portfolio Management Strategies**
+**6e. Portfolio Management Strategies**
 - Modern Portfolio Theory
 
-**6. Conclusion**
+
+**Conclusion**
 
 **Notes and References**
 
