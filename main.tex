@@ -1,5 +1,6 @@
 \documentclass{ledger}
 
+\usepackage{booktabs}
 %AUTHOR: This is a bare-bones template into which you may put your paper to aid in formatting your submission to Ledger. Note that to work properly, you must have the files "ledger.cls", "ledgerbib.bst", and the folder "images" on hand. 
 
 %AUTHOR: the preferred method to generate PDF output is to use 'pdflatex'
@@ -332,7 +333,100 @@ $ \bullet p $ and $ q $ are the orders of the autoregressive and moving average 
 
 \section{Valuation Techniques}
 
-Need more info.
+Valuing cryptocurrencies presents unique challenges and opportunities compared to traditional assets. The decentralized and digital nature of these assets requires innovative approaches to determine their intrinsic and market values. Below, we discuss key valuation techniques, including the collection of on-chain data and the application of relative valuation models.
+
+\subsection{Collect On-Chain Data}
+
+On-chain data refers to information that is recorded directly on the blockchain, the underlying technology of cryptocurrencies. This data provides valuable insights into the network's activity and health, which can be used to inform valuation models. Key metrics include transaction volume, active addresses, and the total value transacted on the network.
+
+\subsubsection{Importance of On-Chain Data}
+
+$ \bullet $ \textbf{Transparency}: On-chain data is publicly accessible, allowing analysts to observe real-time network activity.
+
+$ \bullet $ \textbf{Market Sentiment}: High transaction volumes and active addresses can indicate strong market interest and adoption.
+
+$ \bullet $ \textbf{Security and Reliability}: The decentralized nature of blockchain technology ensures that the data is tamper-proof and reliable.
+
+\hfill \break
+
+\subsubsection{Transaction Volume}
+
+Transaction volume measures the total amount of cryptocurrency transferred within the network over a given period. High transaction volumes can signal increased usage and demand for the cryptocurrency, potentially leading to higher valuations.
+
+\subsection{Relative Valuation Models}
+
+Relative valuation models compare the value of a cryptocurrency to other similar assets, providing a framework to assess whether a cryptocurrency is overvalued or undervalued relative to its peers. One of the most widely used relative valuation models in the cryptocurrency space is the Network Value to Transactions (NVT) ratio.
+
+\subsubsection{Network Value to Transactions (NVT) Ratio}
+
+The NVT ratio is akin to the price-to-earnings (P/E) ratio used in equity markets. It is calculated by dividing the market capitalization of a cryptocurrency by its daily transaction volume.
+
+\[
+\text{NVT Ratio} = \frac{\text{Market Capitalization}}{\text{Daily Transaction Volume}}
+\]
+
+$ \bullet $ \textbf{Market Capitalization}: The total value of all coins in circulation, calculated by multiplying the current price by the total supply.
+
+$ \bullet $  \textbf{Daily Transaction Volume}: The sum of all transactions made within a 24-hour period.
+
+\subsubsection{Interpretation of the NVT Ratio}
+
+$ \bullet $  \textbf{High NVT Ratio}: Indicates that the network value (market cap) is high relative to its transaction volume. This could suggest that the cryptocurrency is overvalued or that it is being used more as a store of value rather than for transactions.
+
+$ \bullet $  \textbf{Low NVT Ratio}: Suggests that the network is undervalued relative to its transaction volume, indicating healthy network activity and potentially higher growth prospects.
+
+\subsection{Absolute Valuation Models}
+
+The Equation of Exchange is given by:
+
+\[
+MV = PQ
+\]
+
+Where:
+
+$ \bullet $  $M$ is the total money supply.
+
+$ \bullet $  $V$ is the velocity of money.
+
+$ \bullet $ $P$ is the price level.
+
+$ \bullet $ $Q$ is the transaction volume (or economic output).
+
+
+For cryptocurrencies:
+\[
+\text{Intrinsic Value} = \frac{P \times Q}{V}
+\]
+
+Results
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{./code/valuation-techniques/intrinsic_value.png}
+    \caption{Intrinisic Value of Cryptocurrencies}
+    \label{fig:beta}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{./code/valuation-techniques/nvt_ratio.png}
+    \caption{NVT Ratio - Cryptocurrencies}
+    \label{fig:beta}
+\end{figure}
+
+\textbf{Calculate Intrinsic Value}
+
+You need to make some assumptions or gather data for $V$ (velocity), $P$ (price level), and $Q$ (transaction volume).
+
+
+\subsection{Application of Valuation Techniques to Cryptocurrencies}
+
+By leveraging on-chain data and relative valuation models like the NVT ratio, investors and analysts can gain a deeper understanding of the intrinsic value and market dynamics of cryptocurrencies. These techniques help in identifying investment opportunities and assessing the fundamental health of different cryptocurrency networks.
+
+In conclusion, the integration of on-chain data and innovative valuation models provides a robust framework for analyzing and valuing cryptocurrencies. As the market for digital assets continues to evolve, these techniques will play a crucial role in guiding investment decisions and fostering a deeper understanding of the complex dynamics at play.
+
+
 
 \section{Price Prediction}
 
