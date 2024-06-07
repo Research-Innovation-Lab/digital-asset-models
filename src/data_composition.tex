@@ -1,0 +1,17 @@
+\section{Data Composition}
+
+We decided to retrieve the top 10 best cryptocurrencies based on market cap as of 05/11/2024. We have excluded stablecoins like Tether (USDT) and USDC. Therefore, we have the following coins in order of market capitalization (excluding stablecoins): 
+1) Bitcoin (BTC)
+2) Ethereum (ETH)
+3) Solana (SOL)
+4) Binance Coin (BNB)
+5) XRP (XRP)
+6) Toncoin (TON)
+7) Dogecoin (DOGE)
+8) Cardano (ADA)
+9) Shiba Inu (SHIB)
+10) Avalanche (AVAX)
+
+From the above list, we notice that we have the two main cryptocurrencies Bitcoin and Ethereum, with Bitcoin around \$1.2 trillion in value (according to CoinMarketCap) and Ethereum hovering around \$3.5 billion, about 3x less the value compared to Bitcoin.
+
+The data is fetched from Yahoo Finance via yfinance. \cite{yfinance}. In terms of dates, unless otherwise specified, the default dates from Jan 1st, 2022 to Jan 1st, 2024. We use the daily adjusted close data as our data points, which is ample to provide various analysis.
