@@ -1,6 +1,12 @@
 \documentclass{ledger}
 
+\usepackage{hyperref}
 \usepackage{booktabs}
+\usepackage{array}
+\usepackage{geometry}
+\usepackage{longtable}
+\geometry{a4paper, margin=1in}
+
 %AUTHOR: This is a bare-bones template into which you may put your paper to aid in formatting your submission to Ledger. Note that to work properly, you must have the files "ledger.cls", "ledgerbib.bst", and the folder "images" on hand. 
 
 %AUTHOR: the preferred method to generate PDF output is to use 'pdflatex'
@@ -74,177 +80,16 @@ This research project aims to conduct a comprehensive study on state-of-the-art 
 \end{keywords}
 \end{abstract}
 
-\section{Comprehensive Literature Review}
-\subsection{Background}
-Digital assets have grown rapidly in recent years, with the total market cap of cryptocurrencies surpassing \$2 trillion in 2021. While digital assets hold promising investment opportunities, the volatile and decentralized nature of this new asset class presents unique investment challenges compared to traditional assets. As investor interest in digital assets continues to grow, there is a need to explore best practices for evaluating and managing risks associated with digital asset investments.
+\input{src/intro}
 
-Alternative asset investing offers strategies that may help address some of the challenges with digital assets. However, applying traditional alternative asset models directly to digital assets is not straightforward given key differences in their characteristics. It is therefore important to examine existing models and understand how they may need to be adapted for the digital asset landscape.
+\input{src/overview}
 
-\subsubsection{Alternative Asset Models}
-A wide range of alternative asset investing models have been developed and applied across various private market asset classes such as private equity, private credit, real assets and hedge funds. Common models used include portfolio theory, factor models, mean-variance optimization, and risk parity frameworks.
+\input{src/digital_asset_landscape}
 
-While these models have proven valuable in traditional alternative investments, it remains unclear whether and how they can be applied to digital assets. Digital assets such as cryptocurrencies differ significantly from traditional assets in factors like volatility, liquidity profile and regulatory oversight (FINRA.org).
+\input{src/data_composition}
 
-\subsection {Digital Assets}
-Cryptocurrencies were the first widely adopted digital assets, with Bitcoin being the largest. Since then, new digital asset classes have emerged including security tokens representing asset ownership, and utility tokens providing access to a network or platform.
+\input{src/process}
 
-Digital assets present both opportunities and challenges from an investment perspective. While some studies show they can provide portfolio diversification benefits, their short history makes volatility and risk difficult to assess over long periods (FINRA.org). Regulatory ambiguity also introduces legal and compliance complexities for investors (CRS Reports, 2023).
-
-Connecting these concepts, there is a need for research exploring whether and how existing alternative asset investing approaches could benefit the growth of a regulated digital asset investment industry. This paper aims to address this gap by systematically analyzing various models and evaluating their applicability to different digital asset classes.
-
-\section{Examining Existing Alternative Asset Models and Their Key Principles}
-
-Blah blah blah. This paper is broken into the following sections.
-\begin{itemize}
-       \item[1] Risk and Return Analysis
-            \begin{itemize}
-            \item[1.1] Capital Asset Pricing Model (CAPM)
-            \end{itemize}
-       \item[2] Volatility Analysis
-            \begin{itemize}
-            \item[2.1] Generalized AutoRegressive Conditional Heteroskedasticity (GARCH)
-            \item[2.2] Stochastic Model - Geometric Brownian Motion (GBM)
-            \end{itemize}
-       \item[3] Valuation Techniques
-            \begin{itemize}
-            \item[3.1] Relative Valuation Models - Network Value to Transactions (Comparative Analysis)
-            \item[3.2] Absolute Valuation Models - Equation of Exchange (Intrinsic Value)
-            \end{itemize}
-       \item[4] Portfolio Management Strategies
-            \begin{itemize}
-            \item[4.1] Modern Portfolio Theory
-            \end{itemize}
-       \item[5] Price Prediction
-           \begin{itemize}
-           \item[5.1] Long Short Term Memory (LSTM)
-           \item[5.2] Autoregressive Integrated Moving Average (ARIMA)
-           \end{itemize}
-\end{itemize}
-% \begin{figure}
-% \centering
-% \captionsetup{justification=centering}
-% \includegraphics[width=1\textwidth]{graph.png}
-%     \caption{A graph showing things of interest.}
-%     \label{graph1}
-% \end{figure}
-
-
-\section{Digital Asset Landscape, Exploring the Unique Characteristics and Challenges associated with Investing in Digital Assets}
-
-Info needed here.
-
-\section{Data Preparation}
-
-We decided to retrieve the top 10 best cryptocurrencies based on market cap as of 05/11/2024. We have excluded stablecoins like Tether (USDT) and USDC. Therefore, we have the following coins in order of market capitalization (excluding stablecoins): 
-1) Bitcoin (BTC)
-2) Ethereum (ETH)
-3) Solana (SOL)
-4) Binance Coin (BNB)
-5) XRP (XRP)
-6) Toncoin (TON)
-7) Dogecoin (DOGE)
-8) Cardano (ADA)
-9) Shiba Inu (SHIB)
-10) Avalanche (AVAX)
-
-From the above list, we notice that we have the two main cryptocurrencies Bitcoin and Ethereum, with Bitcoin around \$1.2 trillion in value (according to CoinMarketCap) and Ethereum hovering around \$3.5 billion, about 3x less the value compared to Bitcoin.
-
-The data is fetched from Yahoo Finance via yfinance. \cite{yfinance}. In terms of dates, unless otherwise specified, the default dates from Jan 1st, 2022 to Jan 1st, 2024. We use the daily adjusted close data as our data points, which is ample to provide various analysis.
-
-\section{Risk and Return Analysis}
-
-Investing in alternative assets offers unique opportunities and challenges, particularly in the realm of risk and return. Unlike traditional assets such as stocks and bonds, alternative assets—including private equity, hedge funds, real estate, and commodities—often exhibit different risk profiles and return characteristics. This distinct behavior necessitates a thorough analysis to understand how these assets can fit into an overall investment strategy and contribute to portfolio diversification and performance.
-
-When assessing the risk and return of alternative assets, it is crucial to consider factors such as liquidity risk, market risk, and operational risk, which may differ significantly from those associated with traditional investments. Additionally, the return potential of alternative assets can be influenced by factors such as leverage, market inefficiencies, and unique economic exposures.
-
-To systematically evaluate the risk and return characteristics of alternative assets, financial models and theories can be employed. One of the foundational models in finance for assessing the relationship between risk and expected return is the Capital Asset Pricing Model (CAPM).
-
-The Capital Asset Pricing Model (CAPM) is a cornerstone of modern financial theory, providing a framework for understanding the trade-off between risk and return for individual assets in a diversified portfolio. Developed by William Sharpe in the 1960s, CAPM posits that the expected return of an asset is directly related to its systematic risk, as measured by beta (\(\beta\)). Beta represents the sensitivity of an asset's returns to the returns of the overall market, capturing the asset's exposure to market-wide risk factors.
-
-According to CAPM, the expected return on an asset can be expressed as:
-
-\[
-E(R_i) = R_f + \beta_i (E(R_m) - R_f)
-\]
-
-where:
-
-$ \bullet E(R_i) $ is the expected return of the asset,
-
-$ \bullet R_f $ is the risk-free rate,
-
-$ \bullet \beta_i $ is the beta of the asset,
-
-$ \bullet E(R_m) $ is the expected return of the market,
-
-$ \bullet E(R_m) - R_f $ is the market risk premium.
-
-
-\hfill \break
-
-\paragraph{Calculating CAPM for Cryptocurrencies}
-
-\hfill \break
-
-1. Determine the Risk-Free Rate (\(R_f\))
-
-The risk-free rate is typically the return on government bonds, such as U.S. Treasury bills. For cryptocurrencies, we used the yield on a 10-year U.S. Treasury bond as a proxy for the risk-free rate.
-
-2. Calculate the Expected Market Return (\(R_m\))
-
-The expected market return can be the average return of a broad cryptocurrency market index. For this instance, we used the Bitwise 10 Crypto Index Fund (BITW) \cite{bitw}.
-
-3. Calculate the Beta (\(\beta\))
-
-Beta measures the volatility of a cryptocurrency relative to the market. 
-
-To calculate beta:
-
-\begin{itemize}
-    \item Collect Historical Price Data: Obtain historical daily prices for each cryptocurrency and the chosen market index.
-    \item Calculate Returns: Compute the daily returns for each cryptocurrency and the market index.
-    \item Run a Regression Analysis: Perform a linear regression with the cryptocurrency returns as the dependent variable and the market index returns as the independent variable. The slope of the regression line is the beta.
-\end{itemize}
-
-4. Compute the Market Risk Premium (\(R_m - R_f\))
-
-The market risk premium is the difference between the expected market return and the risk-free rate.
-
-\paragraph{Analysis of Cryptocurrencies}
-
-\begin{table}[h]
-    \centering
-    \begin{tabular}{ccc}
-         \textbf{Asset} & \textbf{Beta} & \textbf{Market Risk Premium} \\
-         \hline
-         BTC-USD & 0.468009 & 0.062761 \\
-         ETH-USD & 0.544777 & 0.068134 \\
-         SOL-USD & 0.725297 & 0.080771 \\
-         BNB-USD & 0.394427 & 0.057610 \\
-         XRP-USD & 0.569858 & 0.069890 \\
-         TON-USD & 0.415367 & 0.059076 \\
-         DOGE-USD & 0.499549 & 0.064968 \\
-         ADA-USD & 0.554140 & 0.068790 \\
-         SHIB-USD & 0.523131 & 0.066619 \\
-         AVAX-USD & 0.606193 & 0.072434 \\
-    \end{tabular}
-    \caption{Caption for the table}
-    \label{tab:my_label}
-\end{table}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{./code/risk-and-return-analysis/capm/beta.png}
-    \caption{Beta of Cryptocurrencies Relative to BITW}
-    \label{fig:beta}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{./code/risk-and-return-analysis/capm/exp_return.png}
-    \caption{Expected Return of Cryptocurrencies Relative to BITW}
-    \label{fig:exp_return}
-\end{figure}
 
 \section{Volatility Analysis}
 
@@ -480,32 +325,41 @@ Authors should state any conflict of interest as defined by Ledger's Conflict of
 
 \appendix
 \setcounter{section}{0}
-\section{Data and Descriptions}
+\section{Capital Asset Pricing Model (CAPM) Details}\label{appendix:capm_details}
 
 \vspace{12pt}
-\begin{table}[h]
-\begin{center} 
-\scalebox{0.6}{ 
-\begin{tabular}{p{5cm}p{18cm}}%{l|}%{|>m{5cm}|>m{15cm}|}
-%\rowcolor{orange}
+
+\begin{longtable}{|l|l|c|c|c|c|}
 \hline
- \textbf{Column A}  & \textbf{Column B} \\\hline
-	Data & Description of data in more detail.\\
+\textbf{Asset} & \textbf{Asset Class} & \textbf{Beta} & \textbf{Expected Return (CAPM)} & \textbf{R-squared} & \textbf{p-value} \\
 \hline
- Also Data & More description of data.\\
-\hline 
- A Third Item & Pretium fusce id velit ut tortor pretium viverra suspendisse potenti. Enim sed faucibus turpis in eu. In hac habitasse platea dictumst quisque sagittis. Pharetra et ultrices neque ornare aenean euismod elementum.\\
+AAPL & Equities & 0.1489 & 0.0294 & 0.1295 & $1.22 \times 10^{-23}$ \\
+MSFT & Equities & 0.1469 & 0.0295 & 0.1127 & $1.30 \times 10^{-20}$ \\
+AMZN & Equities & 0.2194 & 0.0270 & 0.1310 & $6.41 \times 10^{-24}$ \\
+GOOGL & Equities & 0.1653 & 0.0289 & 0.1108 & $2.83 \times 10^{-20}$ \\
+TSLA & Equities & 0.2734 & 0.0251 & 0.1018 & $1.13 \times 10^{-18}$ \\
+SPY & Equities & 0.1084 & 0.0308 & 0.1519 & $8.59 \times 10^{-28}$ \\
+DJI & Equities & 0.0089 & 0.0343 & 0.0176 & $3.32 \times 10^{-4}$ \\
+AGG & Bonds & 0.0115 & 0.0342 & 0.0108 & 0.5081 \\
+VNQ & Real Estate & 0.0884 & 0.0315 & 0.0754 & $4.80 \times 10^{-14}$ \\
+GLD & Commodities & 0.0195 & 0.0339 & 0.0091 & 0.1010 \\
+USO & Commodities & 0.0408 & 0.0332 & 0.0059 & 0.0387 \\
+SLV & Commodities & 0.0671 & 0.0323 & 0.0291 & $3.73 \times 10^{-6}$ \\
+PSP & Private Equity & 0.1596 & 0.0291 & 0.1584 & $5.26 \times 10^{-29}$ \\
+BTC-USD & Cryptos & 0.4680 & 0.0184 & 0.3584 & $6.78 \times 10^{-72}$ \\
+ETH-USD & Cryptos & 0.5448 & 0.0157 & 0.3008 & $2.47 \times 10^{-58}$ \\
+SOL-USD & Cryptos & 0.7253 & 0.0095 & 0.2163 & $2.76 \times 10^{-40}$ \\
+BNB-USD & Cryptos & 0.3944 & 0.0209 & 0.2106 & $3.79 \times 10^{-39}$ \\
+XRP-USD & Cryptos & 0.5699 & 0.0149 & 0.1991 & $7.28 \times 10^{-37}$ \\
+TON-USD & Cryptos & 0.4154 & 0.0202 & 0.0721 & $1.78 \times 10^{-13}$ \\
+DOGE-USD & Cryptos & 0.4995 & 0.0173 & 0.1583 & $5.43 \times 10^{-29}$ \\
+ADA-USD & Cryptos & 0.5541 & 0.0154 & 0.2331 & $9.96 \times 10^{-44}$ \\
+SHIB-USD & Cryptos & 0.5231 & 0.0165 & 0.1156 & $3.89 \times 10^{-21}$ \\
+AVAX-USD & Cryptos & 0.6062 & 0.0136 & 0.1888 & $7.68 \times 10^{-35}$ \\
 \hline
-%\hline
-\end{tabular}}
+\end{longtable}
 
 
-
-\caption{A table in an appendix} \label{AppendixTable}
-\end{center}
-\end{table} 
-%\newpage
-%here up^^
 
 
 \thispagestyle{pagelast}
