@@ -1,30 +1,31 @@
 \section{Process and Results}
 
 \subsection{Capital Asset Pricing Model}
+To determine the CAPM for each asset, we must first calculate the Risk-Free Rate (\(R_f\)), Expected Market Return (\(R_m\)), Beta (\(\beta\)) for each asset. Below lays out the steps
 
-1. Determine the Risk-Free Rate (\(R_f\))
+1. Risk-Free Rate (\(R_f\))
 
 The risk-free rate is typically the return on government bonds, such as U.S. Treasury bills. We decided to use the average risk-free rate over our analysis period for CBOE Interest Rate 10 Year T No \cite{YahooFinanceTNX}
 
-2. Calculate the Expected Market Return (\(R_m\))
+2. Expected Market Return (\(R_m\))
 
-The expected market return can be the average return of a broad cryptocurrency market index. For this instance, we used the Bitwise 10 Crypto Index Fund (BITW) \cite{bitw}.
+To measure the expected market return, we decided to align our focus to the cryptocurrency market. The expected market return is the average return of a broad cryptocurrency market index, and we used the Bitwise 10 Crypto Index Fund (BITW) \cite{bitw}.
 
-3. Calculate the Beta (\(\beta\))
+3. Beta Calculation (\(\beta\))
 
-Beta measures the volatility of a cryptocurrency relative to the market. 
-
-To calculate beta:
+Beta measures the volatility of an asset relative to the market. 
 
 \begin{itemize}
-    \item Collect Historical Price Data: Obtain historical daily prices for each cryptocurrency and the chosen market index.
-    \item Calculate Returns: Compute the daily returns for each cryptocurrency and the market index.
-    \item Run a Regression Analysis: Perform a linear regression with the cryptocurrency returns as the dependent variable and the market index returns as the independent variable. The slope of the regression line is the beta.
+    \item Obtained historical daily prices for each asset and the chosen market index.
+    \item Computed the daily returns for each asset and the market index.
+    \item Performed a linear regression with the asset returns as the dependent variable and the market index returns as the independent variable. The slope of the regression line is the beta.
 \end{itemize}
 
-4. Compute the Market Risk Premium (\(R_m - R_f\))
+4. Market Risk Premium (\(R_m - R_f\))
 
 The market risk premium is the difference between the expected market return and the risk-free rate.
+
+Combining each component into the CAPM Model, we obtained the following results.
 
 \begin{table}[h]
 \centering
@@ -64,17 +65,56 @@ AVAX-USD & 0.6062 & -0.0346 & 0.0136 \\
 
 More information can be found in appendix, please refer to \ref{appendix:capm_details}.
 
-
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{./code/risk-and-return-analysis/capm/beta_assets.png}
-    \caption{Beta of Cryptocurrencies Relative to BITW}
+    \includegraphics[width=\textwidth]{./code/risk-and-return-analysis/capm/beta_assets.png}
+    \caption{Beta of Assets Relative to BITW}
     \label{fig:beta}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{./code/risk-and-return-analysis/capm/exp_return_assets.png}
-    \caption{Expected Return of Cryptocurrencies Relative to BITW}
+    \includegraphics[width=\textwidth]{./code/risk-and-return-analysis/capm/exp_return_assets.png}
+    \caption{Expected Return of Assets Relative to BITW}
     \label{fig:exp_return}
 \end{figure}
+
+
+\subsection{GARCH Model}
+
+To investigate the time-varying volatility of different financial assets via the GAR Model, we first calculated the daily returns of each asset. Next, we specified and fitted a GARCH(1,1) model to the return data for each asset. This model choice is common in finance for capturing volatility clustering. After fitting the models, we evaluated their performance using various criteria. This included examining summary statistics, such as the Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC), to assess model fit and complexity. Additionally, we analyzed residuals to ensure they exhibited characteristics of white noise and conducted stationarity tests to validate model assumptions. Finally, we performed out-of-sample forecasting to assess the model's predictive ability.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Asset} & \textbf{AIC} & \textbf{BIC} & \textbf{Std. Dev. of Residuals} & \textbf{ADF P-value} \\
+\hline
+AAPL & -4104.141419 & -4085.785713 & 0.015185 & $1.101250 \times 10^{-10}$ \\
+MSFT & -3958.459076 & -3940.103370 & 0.016048 & $0.000000 \times 10^{0}$ \\
+AMZN & -3527.632538 & -3509.276832 & 0.022235 & $0.000000 \times 10^{0}$ \\
+GOOGL & -3761.433980 & -3743.078274 & 0.018217 & $0.000000 \times 10^{0}$ \\
+TSLA & -2975.230946 & -2956.875240 & 0.031426 & $3.389710 \times 10^{-17}$ \\
+SPY & -4706.649643 & -4688.293937 & 0.010198 & $0.000000 \times 10^{0}$ \\
+AGG & -5943.267510 & -5924.911804 & 0.004055 & $0.000000 \times 10^{0}$ \\
+PSP & -4134.885264 & -4116.529558 & 0.014713 & $3.796390 \times 10^{-14}$ \\
+VNQ & -4397.181876 & -4378.826170 & 0.011807 & $0.000000 \times 10^{0}$ \\
+SLV & -4097.102350 & -4078.746644 & 0.014428 & $0.000000 \times 10^{0}$ \\
+GLD & -5061.309177 & -5042.953471 & 0.007486 & $2.703564 \times 10^{-13}$ \\
+USO & -3713.532179 & -3695.176474 & 0.019503 & $1.610235 \times 10^{-20}$ \\
+DJI & -8670.546027 & -8652.190321 & 0.002467 & $8.834765 \times 10^{-23}$ \\
+BTC-USD & -3158.715890 & -3140.360184 & 0.028678 & $0.000000 \times 10^{0}$ \\
+ETH-USD & -2872.649475 & -2854.293769 & 0.036436 & $2.822524 \times 10^{-14}$ \\
+SOL-USD & -2203.137317 & -2184.781611 & 0.057214 & $7.252747 \times 10^{-13}$ \\
+BNB-USD & -3081.403029 & -3063.047323 & 0.031529 & $0.000000 \times 10^{0}$ \\
+XRP-USD & -2394.737021 & -2376.381316 & 0.046846 & $0.000000 \times 10^{0}$ \\
+TON-USD & -2399.471006 & -2381.115300 & 0.056736 & $8.855518 \times 10^{-17}$ \\
+DOGE-USD & -2600.240098 & -2581.884392 & 0.046055 & $2.419880 \times 10^{-11}$ \\
+ADA-USD & -2626.560777 & -2608.205071 & 0.042101 & $3.112660 \times 10^{-13}$ \\
+SHIB-USD & -2156.569383 & -2138.213677 & 0.056434 & $6.159495 \times 10^{-25}$ \\
+AVAX-USD & -2382.263883 & -2363.908177 & 0.051174 & $0.000000 \times 10^{0}$ \\
+\hline
+\end{tabular}
+\caption{Comparison of GARCH Model Analysis}
+\label{tab:garch_comparison}
+\end{table}

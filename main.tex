@@ -6,6 +6,7 @@
 \usepackage{geometry}
 \usepackage{longtable}
 \geometry{a4paper, margin=1in}
+\usepackage{tabularx}
 
 %AUTHOR: This is a bare-bones template into which you may put your paper to aid in formatting your submission to Ledger. Note that to work properly, you must have the files "ledger.cls", "ledgerbib.bst", and the folder "images" on hand. 
 
@@ -105,31 +106,10 @@ On the other hand, stochastic GBM, a stochastic process widely used in mathemati
 
 \subsection{Stochastic Model - GBM}
 
-\hfill \break
-
-The Geometric Brownian Motion (GBM) is a model used in finance to describe the random movement of asset prices. It's represented by the equation:
-
-\[
-dS_t = \mu S_t dt + \sigma S_t dW_t
-\]
-
-Where:
-
-$ \bullet S_t $ is the price of the asset at time $ t $.
- 
-$ \bullet \mu $ is the average rate of return, or drift.
-
-$ \bullet \sigma $ is the volatility, or standard deviation of returns.
-
-$ \bullet dW_t $ represents the random fluctuation in the asset's price.
-
-\hfill \break
-
-This equation states that the change in the asset price over a small time interval \( dt \) consists of two components: a deterministic component represented by \( \mu S_t dt \), and a random component represented by \( \sigma S_t dW_t \).
 
 
 
-\begin{table}[h]
+\begin{table}
     \centering
     \begin{tabular}{ccc}
          \toprule
@@ -150,30 +130,6 @@ This equation states that the change in the asset price over a small time interv
     \caption{Summary Statistics of Selected Digital Assets}
     \label{tab:summary_stats}
 \end{table}
-
-\subsection{GARCH Model}
-
-\hfill \break
-
-The GARCH model is an econometric model that captures the time-varying volatility or variance of a time series. It assumes that the volatility of the series is autocorrelated and can be predicted based on past values of the series and past volatility.
-
-The basic form of the GARCH(p, q) model is:
-
-\[
-\sigma_{t}^2 = \omega + \alpha_{1}\varepsilon_{t-1}^2 + \ldots + \alpha_{p}\varepsilon_{t-p}^2 + \beta_{1}\sigma_{t-1}^2 + \ldots + \beta_{q}\sigma_{t-q}^2
-\]
-
-Where:
-
-$ \bullet \sigma_{t}^2 $ is the conditional variance at time $ t $,
-
-$ \bullet \omega $ is the constant term,
-
-$ \bullet \varepsilon_{t} $ is the error term at time $ t $,
-
-$ \bullet \alpha_{i} $ and $ \beta_{i} $ are the coefficients for the squared error terms and the conditional variances at lag $ i $ respectively,
-
-$ \bullet p $ and $ q $ are the orders of the autoregressive and moving average terms respectively.
 
 
 \section{Valuation Techniques}
@@ -290,9 +246,7 @@ Need more info.
 
 Need more info.
 
-\section{Analysis of Different Alternative Asset Models and Their Potential Application to Digital Assets}
-
-Need More Info.
+\input{src/analysis}
 
 %define the following sections to hide their Section Number (Notes Style)
 \ledgernotes
