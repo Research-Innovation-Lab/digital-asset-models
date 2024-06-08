@@ -1,0 +1,55 @@
+\subsection{Volatility Analysis}
+
+Volatility analysis plays a crucial role in understanding the behavior of financial assets, particularly in the realm of alternative investments. Volatility, often regarded as a measure of risk, encapsulates the degree of uncertainty or variability in the returns of an asset over time. In the context of alternative assets, which encompass a diverse range of investment vehicles beyond traditional stocks and bonds, volatility assumes heightened significance due to the unique characteristics and dynamics inherent in these assets.
+
+The emergence of digital assets, such as cryptocurrencies and tokenized securities, has further underscored the importance of volatility analysis in alternative asset management. These nascent and rapidly evolving asset classes exhibit distinct patterns of price fluctuations and risk profiles, necessitating sophisticated analytical tools to model and assess their volatility dynamics accurately.
+
+Volatility analysis serves multiple purposes in the management of alternative assets. Firstly, it provides insights into the inherent risk associated with these assets, enabling investors and portfolio managers to make informed decisions regarding asset allocation, risk mitigation strategies, and portfolio diversification. Secondly, volatility analysis facilitates the estimation of potential returns and the pricing of derivative instruments, such as options and futures, which are commonly utilized in alternative asset markets for hedging and speculation purposes.
+
+Two prominent methodologies employed in volatility analysis are the Generalized Autoregressive Conditional Heteroskedasticity (GARCH) model and Stochastic Geometric Brownian Motion (GBM). The GARCH model, a time-series econometric framework, is widely utilized to model the volatility clustering and persistence observed in financial asset returns. By capturing the conditional heteroskedasticity of asset returns, the GARCH model enables practitioners to forecast future volatility levels accurately and assess the risk-return characteristics of alternative assets.
+
+On the other hand, stochastic GBM, a stochastic process widely used in mathematical finance, provides a continuous-time framework for modeling the evolution of asset prices and their associated volatility. By incorporating random fluctuations and drift components into the asset price dynamics, stochastic GBM offers a versatile approach to simulating the behavior of alternative assets under various market conditions and investment scenarios.
+
+\subsubsection{Stochastic Geometric Brownian Motion (GBM)}
+
+The Geometric Brownian Motion (GBM) is a model used in finance to describe the random movement of asset prices. It's represented by the equation:
+
+\[
+dS_t = \mu S_t dt + \sigma S_t dW_t
+\]
+
+Where:
+
+$ \bullet S_t $ is the price of the asset at time $ t $.
+ 
+$ \bullet \mu $ is the average rate of return, or drift.
+
+$ \bullet \sigma $ is the volatility, or standard deviation of returns.
+
+$ \bullet dW_t $ represents the random fluctuation in the asset's price.
+
+
+This equation states that the change in the asset price over a small time interval \( dt \) consists of two components: a deterministic component represented by \( \mu S_t dt \), and a random component represented by \( \sigma S_t dW_t \).
+
+\subsection{GARCH Model}
+
+The GARCH model is an econometric model that captures the time-varying volatility or variance of a time series. It assumes that the volatility of the series is autocorrelated and can be predicted based on past values of the series and past volatility.
+
+The basic form of the GARCH(p, q) model is:
+
+\[
+\sigma_{t}^2 = \omega + \alpha_{1}\varepsilon_{t-1}^2 + \ldots + \alpha_{p}\varepsilon_{t-p}^2 + \beta_{1}\sigma_{t-1}^2 + \ldots + \beta_{q}\sigma_{t-q}^2
+\]
+
+Where:
+
+$ \bullet \sigma_{t}^2 $ is the conditional variance at time $ t $,
+
+$ \bullet \omega $ is the constant term,
+
+$ \bullet \varepsilon_{t} $ is the error term at time $ t $,
+
+$ \bullet \alpha_{i} $ and $ \beta_{i} $ are the coefficients for the squared error terms and the conditional variances at lag $ i $ respectively,
+
+$ \bullet p $ and $ q $ are the orders of the autoregressive and moving average terms respectively.
+
