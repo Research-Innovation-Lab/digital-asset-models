@@ -14,9 +14,9 @@ On the other hand, stochastic GBM, a stochastic process widely used in mathemati
 
 The Geometric Brownian Motion (GBM) is a model used in finance to describe the random movement of asset prices. It's represented by the equation:
 
-\[
+\begin{equation}\label{eq:stochastic_diff_eq}
 dS_t = \mu S_t dt + \sigma S_t dW_t
-\]
+\end{equation}
 
 Where:
 
@@ -37,9 +37,9 @@ The GARCH model is an econometric model that captures the time-varying volatilit
 
 The basic form of the GARCH(p, q) model is:
 
-\[
+\begin{equation}\label{eq:garch_model}
 \sigma_{t}^2 = \omega + \alpha_{1}\varepsilon_{t-1}^2 + \ldots + \alpha_{p}\varepsilon_{t-p}^2 + \beta_{1}\sigma_{t-1}^2 + \ldots + \beta_{q}\sigma_{t-q}^2
-\]
+\end{equation}
 
 Where:
 

@@ -1,0 +1,49 @@
+\subsection{Price Prediction}
+
+Predicting financial market prices, such as stock prices or cryptocurrency values, is a challenging task due to the complex and nonlinear nature of market dynamics. Long Short-Term Memory (LSTM) models have emerged as powerful tools for price prediction in financial markets. These models excel at capturing temporal dependencies and patterns in sequential data, making them well-suited for analyzing historical price movements and forecasting future trends. By training on historical price data along with other relevant features, LSTM models can learn to identify patterns and correlations that may influence price movements. Additionally, LSTMs can adapt and update their predictions in real-time as new data becomes available, allowing traders and investors to make informed decisions based on up-to-date market conditions. While no model can perfectly predict market prices, LSTM models have shown promising results in various financial prediction tasks and continue to be a valuable tool for analysts and researchers in the field of quantitative finance.
+
+
+Long Short-Term Memory (LSTM) models were introduced by Sepp Hochreiter and Jürgen Schmidhuber in 1997\cite{Hochreiter1997} as a solution to the vanishing gradient problem in traditional recurrent neural networks (RNNs). RNNs have the capability to process sequential data by maintaining a hidden state that evolves over time. However, they often struggle to capture long-range dependencies in the data due to the vanishing gradient problem, where gradients diminish exponentially as they propagate backward in time during training.
+
+The key innovation of LSTM models is the introduction of a memory cell, which enables the network to retain information over long periods of time. This memory cell is equipped with three gates: the input gate, the forget gate, and the output gate. These gates control the flow of information into and out of the cell, allowing the LSTM to selectively update its memory state and process input sequences effectively.
+
+LSTMs have since become one of the most widely used architectures for sequential data processing tasks, including speech recognition, natural language processing, time series forecasting, and more. Their ability to capture long-range dependencies and handle vanishing gradients has made them indispensable for a wide range of applications in machine learning and artificial intelligence.
+
+The key components of an LSTM unit include:
+
+\begin{itemize}
+    \item Forget Gate: Controls the information to be discarded from the cell state.
+    \item Input Gate: Determines which values from the input should be updated.
+    \item Output Gate: Regulates the information to be output based on the cell state.
+\end{itemize}
+
+Additionally, LSTMs have a cell state that runs through the entire chain of LSTM units, allowing information to flow across time steps while selectively retaining or discarding information through the gates.
+
+An definite example of the equations that govern the operations of an LSTM unit:
+
+\begin{align*}
+f_t & = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
+i_t & = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
+\tilde{C}_t & = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) \\
+C_t & = f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t \\
+o_t & = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \\
+h_t & = o_t \cdot \tanh(C_t)
+\end{align*}
+
+In these equations:
+
+$\bullet$ $f_t$, $i_t$, and $o_t$ represent the forget gate, input gate, and output gate activations, respectively. 
+
+$\bullet$ $\tilde{C}_t$ denotes the candidate cell state.
+
+$\bullet$ $C_t$ represents the updated cell state.
+
+$\bullet$ $h_t$ is the output of the LSTM unit at time step $t$.
+
+$\bullet$ $x_t$ is the input at time step $t$.
+
+$\bullet$ $W_f$, $W_i$, $W_C$, and $W_o$ are weight matrices for the forget gate, input gate, candidate cell state, and output gate, respectively.
+    
+$\bullet$ $b_f$, $b_i$, $b_C$, and $b_o$ are bias vectors.
+
+These equations describe the sequential computations performed by an LSTM unit at each time step, allowing it to capture and process temporal dependencies in the input data.
