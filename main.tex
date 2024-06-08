@@ -48,13 +48,13 @@ Gijsbertsen, Laurens C.}, pdftitle={A Study on State-of-the-Art Alternative Asse
 
 
 %The Author should select the appropriate pretitle below:
-\pretitle{
-  \centering \selectfont LEDGER \LaTeX \ TEMPLATE \par
-  %\centering \selectfont REVIEW ARTICLE \par
-  %\centering \selectfont RESEARCH ARTICLE \par 
-  %The Author should not remove the following text:
-  Submission Under Consideration at Ledger \par 
-  \fontsize{24pt}{28pt}\selectfont} % Title is centered and at 24pt
+% \pretitle{
+%   % \centering \selectfont LEDGER \LaTeX \ TEMPLATE \par
+%   %\centering \selectfont REVIEW ARTICLE \par
+%   %\centering \selectfont RESEARCH ARTICLE \par 
+%   %The Author should not remove the following text:
+%   % Submission Under Consideration at Ledger \par 
+%   \fontsize{24pt}{28pt}\selectfont} % Title is centered and at 24pt
 
 
 \begin{document}
@@ -91,161 +91,6 @@ This research project aims to conduct a comprehensive study on state-of-the-art 
 
 \input{src/process}
 
-
-\section{Volatility Analysis}
-
-Volatility analysis plays a crucial role in understanding the behavior of financial assets, particularly in the realm of alternative investments. Volatility, often regarded as a measure of risk, encapsulates the degree of uncertainty or variability in the returns of an asset over time. In the context of alternative assets, which encompass a diverse range of investment vehicles beyond traditional stocks and bonds, volatility assumes heightened significance due to the unique characteristics and dynamics inherent in these assets.
-
-The emergence of digital assets, such as cryptocurrencies and tokenized securities, has further underscored the importance of volatility analysis in alternative asset management. These nascent and rapidly evolving asset classes exhibit distinct patterns of price fluctuations and risk profiles, necessitating sophisticated analytical tools to model and assess their volatility dynamics accurately.
-
-Volatility analysis serves multiple purposes in the management of alternative assets. Firstly, it provides insights into the inherent risk associated with these assets, enabling investors and portfolio managers to make informed decisions regarding asset allocation, risk mitigation strategies, and portfolio diversification. Secondly, volatility analysis facilitates the estimation of potential returns and the pricing of derivative instruments, such as options and futures, which are commonly utilized in alternative asset markets for hedging and speculation purposes.
-
-Two prominent methodologies employed in volatility analysis are the Generalized Autoregressive Conditional Heteroskedasticity (GARCH) model and Stochastic Geometric Brownian Motion (GBM). The GARCH model, a time-series econometric framework, is widely utilized to model the volatility clustering and persistence observed in financial asset returns. By capturing the conditional heteroskedasticity of asset returns, the GARCH model enables practitioners to forecast future volatility levels accurately and assess the risk-return characteristics of alternative assets.
-
-On the other hand, stochastic GBM, a stochastic process widely used in mathematical finance, provides a continuous-time framework for modeling the evolution of asset prices and their associated volatility. By incorporating random fluctuations and drift components into the asset price dynamics, stochastic GBM offers a versatile approach to simulating the behavior of alternative assets under various market conditions and investment scenarios.
-
-\subsection{Stochastic Model - GBM}
-
-
-
-
-\begin{table}
-    \centering
-    \begin{tabular}{ccc}
-         \toprule
-         \textbf{Asset} & \textbf{Mean} & \textbf{Standard Deviation} \\
-         \midrule
-         BTC-USD & 34831.378123 & 12556.081916 \\
-         ETH-USD & 2186.967729 & 863.545155 \\
-         SOL-USD & 55.782474 & 55.221616 \\
-         BNB-USD & 323.091985 & 117.789668 \\
-         XRP-USD & 0.631261 & 0.287855 \\
-         TON-USD & 3.99546 & 3.533988 \\
-         DOGE-USD & 0.125877 & 0.094779 \\
-         ADA-USD & 0.829737 & 0.632222 \\
-         SHIB-USD & 0.000013 & 0.000011 \\
-         AVAX-USD & 32.960283 & 28.309159 \\
-         \bottomrule
-    \end{tabular}
-    \caption{Summary Statistics of Selected Digital Assets}
-    \label{tab:summary_stats}
-\end{table}
-
-
-\section{Valuation Techniques}
-
-Valuing cryptocurrencies presents unique challenges and opportunities compared to traditional assets. The decentralized and digital nature of these assets requires innovative approaches to determine their intrinsic and market values. Below, we discuss key valuation techniques, including the collection of on-chain data and the application of relative valuation models.
-
-\subsection{Collect On-Chain Data}
-
-On-chain data refers to information that is recorded directly on the blockchain, the underlying technology of cryptocurrencies. This data provides valuable insights into the network's activity and health, which can be used to inform valuation models. Key metrics include transaction volume, active addresses, and the total value transacted on the network.
-
-\subsubsection{Importance of On-Chain Data}
-
-$ \bullet $ \textbf{Transparency}: On-chain data is publicly accessible, allowing analysts to observe real-time network activity.
-
-$ \bullet $ \textbf{Market Sentiment}: High transaction volumes and active addresses can indicate strong market interest and adoption.
-
-$ \bullet $ \textbf{Security and Reliability}: The decentralized nature of blockchain technology ensures that the data is tamper-proof and reliable.
-
-\hfill \break
-
-\subsubsection{Transaction Volume}
-
-Transaction volume measures the total amount of cryptocurrency transferred within the network over a given period. High transaction volumes can signal increased usage and demand for the cryptocurrency, potentially leading to higher valuations.
-
-\hfill \break
-
-\subsection{Relative Valuation Models}
-
-Relative valuation models compare the value of a cryptocurrency to other similar assets, providing a framework to assess whether a cryptocurrency is overvalued or undervalued relative to its peers. One of the most widely used relative valuation models in the cryptocurrency space is the Network Value to Transactions (NVT) ratio.
-
-\hfill \break
-
-\subsubsection{Network Value to Transactions (NVT) Ratio}
-
-\hfill \break
-
-The NVT ratio is akin to the price-to-earnings (P/E) ratio used in equity markets. It is calculated by dividing the market capitalization of a cryptocurrency by its daily transaction volume.
-
-\[
-\text{NVT Ratio} = \frac{\text{Market Capitalization}}{\text{Daily Transaction Volume}}
-\]
-
-$ \bullet $ \textbf{Market Capitalization}: The total value of all coins in circulation, calculated by multiplying the current price by the total supply.
-
-$ \bullet $  \textbf{Daily Transaction Volume}: The sum of all transactions made within a 24-hour period.
-
-\hfill \break
-
-\subsubsection{Interpretation of the NVT Ratio}
-
-\hfill \break
-
-$ \bullet $  \textbf{High NVT Ratio}: Indicates that the network value (market cap) is high relative to its transaction volume. This could suggest that the cryptocurrency is overvalued or that it is being used more as a store of value rather than for transactions.
-
-$ \bullet $  \textbf{Low NVT Ratio}: Suggests that the network is undervalued relative to its transaction volume, indicating healthy network activity and potentially higher growth prospects.
-
-\subsection{Absolute Valuation Models}
-
-The Equation of Exchange is given by:
-
-\[
-MV = PQ
-\]
-
-Where:
-
-$ \bullet $  $M$ is the total money supply.
-
-$ \bullet $  $V$ is the velocity of money.
-
-$ \bullet $ $P$ is the price level.
-
-$ \bullet $ $Q$ is the transaction volume (or economic output).
-
-
-For cryptocurrencies:
-\[
-\text{Intrinsic Value} = \frac{P \times Q}{V}
-\]
-
-Results
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{./code/valuation-techniques/intrinsic_value.png}
-    \caption{Intrinsic Value }
-    \label{fig:beta}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{./code/valuation-techniques/nvt_ratio.png}
-    \caption{Network Value to Transactions Ratios}
-    \label{fig:beta}
-\end{figure}
-
-We have to make some assumptions or gather data for $V$ (velocity), $P$ (price level), and $Q$ (transaction volume).
-
-\hfill \break
-
-\subsection{Application of Valuation Techniques to Cryptocurrencies}
-
-By leveraging on-chain data and relative valuation models like the NVT ratio, investors and analysts can gain a deeper understanding of the intrinsic value and market dynamics of cryptocurrencies. These techniques help in identifying investment opportunities and assessing the fundamental health of different cryptocurrency networks.
-
-In conclusion, the integration of on-chain data and innovative valuation models provides a robust framework for analyzing and valuing cryptocurrencies. As the market for digital assets continues to evolve, these techniques will play a crucial role in guiding investment decisions and fostering a deeper understanding of the complex dynamics at play.
-
-
-
-\section{Price Prediction}
-
-Need more info.
-
-\section{Portfolio Management Strategies}
-
-Need more info.
-
 \input{src/analysis}
 
 %define the following sections to hide their Section Number (Notes Style)
@@ -254,14 +99,6 @@ Need more info.
 \section*{Acknowledgements} 
 
 We would like to express our sincere gratitude to Dr. Simon Mak for his invaluable guidance and support in both the SMU Blockchain Club and this research paper. We also wish to acknowledge the SMU Blockchain Club community for their support and collaboration, which were instrumental to this work. Special thanks go to the Engaged Learning Fellowship Program, particularly Jennifer Ebinger, Senior Director, and Adam Neal, Program Manager, for their encouragement and assistance. Lastly, we extend our heartfelt thanks to Southern Methodist University for their generous financial support.
-
-\section*{Author Contributions}
-
-State the contribution made by each author.  Refer to authors using their initials, for example, ``FAL developed the code to perform the simulation (65\%) and FQL analyzed the results (35\%).  They both contributed equally to manuscript preparation.''
-
-\section*{Conflict of Interest}
-
-Authors should state any conflict of interest as defined by Ledger's Conflict of Interest Policy, available on the Ledger website. If the author believes there are no conflicts of interest, they should include the following: ``The author declares that they have no known conflicts of interest as per the journal’s Conflict of Interest Policy.''
 
 %AUTHOR: comment out if using thebibliography
 %\theendnotes
@@ -280,8 +117,6 @@ Authors should state any conflict of interest as defined by Ledger's Conflict of
 \appendix
 \setcounter{section}{0}
 \section{Capital Asset Pricing Model (CAPM) Details}\label{appendix:capm_details}
-
-\vspace{12pt}
 
 \begin{longtable}{|l|l|c|c|c|c|}
 \hline
@@ -313,7 +148,42 @@ AVAX-USD & Cryptos & 0.6062 & 0.0136 & 0.1888 & $7.68 \times 10^{-35}$ \\
 \hline
 \end{longtable}
 
+\pagebreak
+\setcounter{section}{1}
+\section{GARCH Model Analysis}\label{appendix:garch_comparison}
 
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Asset} & \textbf{AIC} & \textbf{BIC} & \textbf{Std. Dev. of Residuals} & \textbf{ADF P-value} \\
+\hline
+AAPL & -4104.141419 & -4085.785713 & 0.015185 & $1.101250 \times 10^{-10}$ \\
+MSFT & -3958.459076 & -3940.103370 & 0.016048 & $0.000000 \times 10^{0}$ \\
+AMZN & -3527.632538 & -3509.276832 & 0.022235 & $0.000000 \times 10^{0}$ \\
+GOOGL & -3761.433980 & -3743.078274 & 0.018217 & $0.000000 \times 10^{0}$ \\
+TSLA & -2975.230946 & -2956.875240 & 0.031426 & $3.389710 \times 10^{-17}$ \\
+SPY & -4706.649643 & -4688.293937 & 0.010198 & $0.000000 \times 10^{0}$ \\
+AGG & -5943.267510 & -5924.911804 & 0.004055 & $0.000000 \times 10^{0}$ \\
+PSP & -4134.885264 & -4116.529558 & 0.014713 & $3.796390 \times 10^{-14}$ \\
+VNQ & -4397.181876 & -4378.826170 & 0.011807 & $0.000000 \times 10^{0}$ \\
+SLV & -4097.102350 & -4078.746644 & 0.014428 & $0.000000 \times 10^{0}$ \\
+GLD & -5061.309177 & -5042.953471 & 0.007486 & $2.703564 \times 10^{-13}$ \\
+USO & -3713.532179 & -3695.176474 & 0.019503 & $1.610235 \times 10^{-20}$ \\
+DJI & -8670.546027 & -8652.190321 & 0.002467 & $8.834765 \times 10^{-23}$ \\
+BTC-USD & -3158.715890 & -3140.360184 & 0.028678 & $0.000000 \times 10^{0}$ \\
+ETH-USD & -2872.649475 & -2854.293769 & 0.036436 & $2.822524 \times 10^{-14}$ \\
+SOL-USD & -2203.137317 & -2184.781611 & 0.057214 & $7.252747 \times 10^{-13}$ \\
+BNB-USD & -3081.403029 & -3063.047323 & 0.031529 & $0.000000 \times 10^{0}$ \\
+XRP-USD & -2394.737021 & -2376.381316 & 0.046846 & $0.000000 \times 10^{0}$ \\
+TON-USD & -2399.471006 & -2381.115300 & 0.056736 & $8.855518 \times 10^{-17}$ \\
+DOGE-USD & -2600.240098 & -2581.884392 & 0.046055 & $2.419880 \times 10^{-11}$ \\
+ADA-USD & -2626.560777 & -2608.205071 & 0.042101 & $3.112660 \times 10^{-13}$ \\
+SHIB-USD & -2156.569383 & -2138.213677 & 0.056434 & $6.159495 \times 10^{-25}$ \\
+AVAX-USD & -2382.263883 & -2363.908177 & 0.051174 & $0.000000 \times 10^{0}$ \\
+\hline
+\end{tabular}
+\end{table}
 
 
 \thispagestyle{pagelast}
