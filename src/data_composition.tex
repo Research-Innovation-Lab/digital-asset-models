@@ -1,50 +1,78 @@
 \section{Data Composition}
 
-We decided to retrieve the top 10 best cryptocurrencies based on market cap as of 05/11/2024. We have excluded stablecoins like Tether (USDT) and USDC. Therefore, we have the following coins in order of market capitalization (excluding stablecoins): 
+We decided to retrieve the top 10 best cryptocurrencies excluding stablecoins (i.e. Tether (USDT) and USDC) based on market cap as of 05/11/2024. The following coins are listed in order of market capitalization: 
 
-1) Bitcoin (BTC)
-2) Ethereum (ETH)
-3) Solana (SOL)
-4) Binance Coin (BNB)
-5) XRP (XRP)
-6) Toncoin (TON)
-7) Dogecoin (DOGE)
-8) Cardano (ADA)
-9) Shiba Inu (SHIB)
-10) Avalanche (AVAX)
+\begin{enumerate}[itemsep=1em]
+    \item Bitcoin (BTC)
+    \item Ethereum (ETH)
+    \item Solana (SOL)
+    \item Binance Coin (BNB)
+    \item XRP (XRP)
+    \item Toncoin (TON)
+    \item Dogecoin (DOGE)
+    \item Cardano (ADA)
+    \item Shiba Inu (SHIB)
+    \item Avalanche (AVAX)
+\end{enumerate}
 
-From the above list, we notice that we have the two main cryptocurrencies Bitcoin and Ethereum, with Bitcoin around \$1.2 trillion in value (according to CoinMarketCap) and Ethereum hovering around \$3.5 billion, about 3x less the value compared to Bitcoin.
+% 1) Bitcoin (BTC)
+% 2) Ethereum (ETH)
+% 3) Solana (SOL)
+% 4) Binance Coin (BNB)
+% 5) XRP (XRP)
+% 6) Toncoin (TON)
+% 7) Dogecoin (DOGE)
+% 8) Cardano (ADA)
+% 9) Shiba Inu (SHIB)
+% 10) Avalanche (AVAX)
 
 On-chain data is also collected via CryptoCompare API \cite{cryptocompare_api}. On-chain data refers to information that is recorded directly on the blockchain, the underlying technology of cryptocurrencies. This data provides valuable insights into the network's activity and health, which can be used to inform valuation models. Key metrics include transaction volume, active addresses, and the total value transacted on the network.
 
-Following assets used:
+We also use the following other assets:
 
--Apple Inc. (AAPL): Apple is a leading technology company known for its consumer electronics products such as the iPhone, iPad, Mac computers, and services like the App Store and iCloud.
+\begin{itemize}[itemsep=1em]
+    \item Apple Inc. (AAPL): Apple is a leading technology company known for its consumer electronics products such as the iPhone, iPad, Mac computers, and services like the App Store and iCloud.
+    \item Microsoft Corporation (MSFT): Microsoft is a multinational technology company that develops, manufactures, licenses, supports, and sells software, electronics, personal computers, and related services. Its flagship products include the Windows operating system, Microsoft Office suite, and Azure cloud services.
+    \item Amazon.com, Inc. (AMZN): Amazon is a global e-commerce and cloud computing company. It is the largest online retailer in the world and also provides cloud infrastructure services through Amazon Web Services (AWS).
+    \item Alphabet Inc. (GOOGL): Alphabet is the parent company of Google and several former Google subsidiaries. Google is the world’s leading search engine and also offers various online advertising services, software, and hardware products.
+    \item Tesla, Inc. (TSLA): Tesla is an electric vehicle and clean energy company. It designs and manufactures electric cars, battery energy storage systems, and solar products. Tesla is known for its innovation in the automotive industry.
+    \item SPDR S\&P 500 ETF Trust (SPY): This ETF seeks to provide investment results that, before expenses, correspond generally to the price and yield performance of the S\&P 500 Index, which measures the performance of 500 large-cap U.S. stocks.
+    \item iShares Core U.S. Aggregate Bond ETF (AGG): AGG aims to track the investment results of an index composed of the total U.S. investment-grade bond market, including government, corporate, and mortgage-backed securities.
+    \item Invesco Global Listed Private Equity Portfolio (PSP): PSP provides exposure to publicly traded private equity companies, offering insight into the performance of private equity investments through publicly listed firms.
+    \item Vanguard Real Estate ETF (VNQ): VNQ seeks to track the performance of the MSCI US Investable Market Real Estate 25/50 Index, which measures the performance of real estate investment trusts (REITs) and other real estate-related investments.
+    \item SPDR Gold Shares ETF (GLD): GLD seeks to reflect the performance of the price of gold bullion, less the Trust’s expenses. It is often used as a hedge against inflation and currency risk.
+    \item iShares Silver Trust (SLV): SLV seeks to reflect the performance of the price of silver, minus expenses. It provides a simple, cost-effective way to gain exposure to the price movement of silver, making it an attractive investment for those looking to diversify their portfolios with commodities.
+    \item United States Oil Fund (USO): USO aims to track the daily price movements of West Texas Intermediate (WTI) light, sweet crude oil. It provides exposure to oil prices and is used to gain exposure to the energy market.
+    \item Dow Jones Industrial Average (DJI): The DJIA is a stock market index that measures the stock performance of 30 large, publicly-owned companies listed on stock exchanges in the United States. It is one of the oldest and most well-known indices in the world.
+    \item Bitwise 10 Crypto Index Fund (BITW): BITW aims to track the performance of the Bitwise 10 Large Cap Crypto Index, which is designed to provide exposure to the 10 largest cryptocurrencies, weighted by market capitalization.
+\end{itemize}
 
-Microsoft Corporation (MSFT): Microsoft is a multinational technology company that develops, manufactures, licenses, supports, and sells software, electronics, personal computers, and related services. Its flagship products include the Windows operating system, Microsoft Office suite, and Azure cloud services.
+% -Apple Inc. (AAPL): Apple is a leading technology company known for its consumer electronics products such as the iPhone, iPad, Mac computers, and services like the App Store and iCloud.
 
-Amazon.com, Inc. (AMZN): Amazon is a global e-commerce and cloud computing company. It is the largest online retailer in the world and also provides cloud infrastructure services through Amazon Web Services (AWS).
+% Microsoft Corporation (MSFT): Microsoft is a multinational technology company that develops, manufactures, licenses, supports, and sells software, electronics, personal computers, and related services. Its flagship products include the Windows operating system, Microsoft Office suite, and Azure cloud services.
 
-Alphabet Inc. (GOOGL): Alphabet is the parent company of Google and several former Google subsidiaries. Google is the world’s leading search engine and also offers various online advertising services, software, and hardware products.
+% Amazon.com, Inc. (AMZN): Amazon is a global e-commerce and cloud computing company. It is the largest online retailer in the world and also provides cloud infrastructure services through Amazon Web Services (AWS).
 
-Tesla, Inc. (TSLA): Tesla is an electric vehicle and clean energy company. It designs and manufactures electric cars, battery energy storage systems, and solar products. Tesla is known for its innovation in the automotive industry.
+% Alphabet Inc. (GOOGL): Alphabet is the parent company of Google and several former Google subsidiaries. Google is the world’s leading search engine and also offers various online advertising services, software, and hardware products.
 
-SPDR S\&P 500 ETF Trust (SPY): This ETF seeks to provide investment results that, before expenses, correspond generally to the price and yield performance of the S\&P 500 Index, which measures the performance of 500 large-cap U.S. stocks.
+% Tesla, Inc. (TSLA): Tesla is an electric vehicle and clean energy company. It designs and manufactures electric cars, battery energy storage systems, and solar products. Tesla is known for its innovation in the automotive industry.
 
-iShares Core U.S. Aggregate Bond ETF (AGG): AGG aims to track the investment results of an index composed of the total U.S. investment-grade bond market, including government, corporate, and mortgage-backed securities.
+% SPDR S\&P 500 ETF Trust (SPY): This ETF seeks to provide investment results that, before expenses, correspond generally to the price and yield performance of the S\&P 500 Index, which measures the performance of 500 large-cap U.S. stocks.
 
-Invesco Global Listed Private Equity Portfolio (PSP): PSP provides exposure to publicly traded private equity companies, offering insight into the performance of private equity investments through publicly listed firms.
+% iShares Core U.S. Aggregate Bond ETF (AGG): AGG aims to track the investment results of an index composed of the total U.S. investment-grade bond market, including government, corporate, and mortgage-backed securities.
 
-Vanguard Real Estate ETF (VNQ): VNQ seeks to track the performance of the MSCI US Investable Market Real Estate 25/50 Index, which measures the performance of real estate investment trusts (REITs) and other real estate-related investments.
+% Invesco Global Listed Private Equity Portfolio (PSP): PSP provides exposure to publicly traded private equity companies, offering insight into the performance of private equity investments through publicly listed firms.
 
-SPDR Gold Shares ETF (GLD): GLD seeks to reflect the performance of the price of gold bullion, less the Trust’s expenses. It is often used as a hedge against inflation and currency risk.
+% Vanguard Real Estate ETF (VNQ): VNQ seeks to track the performance of the MSCI US Investable Market Real Estate 25/50 Index, which measures the performance of real estate investment trusts (REITs) and other real estate-related investments.
 
-iShares Silver Trust (SLV): SLV seeks to reflect the performance of the price of silver, minus expenses. It provides a simple, cost-effective way to gain exposure to the price movement of silver, making it an attractive investment for those looking to diversify their portfolios with commodities.
+% SPDR Gold Shares ETF (GLD): GLD seeks to reflect the performance of the price of gold bullion, less the Trust’s expenses. It is often used as a hedge against inflation and currency risk.
 
-United States Oil Fund (USO): USO aims to track the daily price movements of West Texas Intermediate (WTI) light, sweet crude oil. It provides exposure to oil prices and is used to gain exposure to the energy market.
+% iShares Silver Trust (SLV): SLV seeks to reflect the performance of the price of silver, minus expenses. It provides a simple, cost-effective way to gain exposure to the price movement of silver, making it an attractive investment for those looking to diversify their portfolios with commodities.
 
-Dow Jones Industrial Average (DJI): The DJIA is a stock market index that measures the stock performance of 30 large, publicly-owned companies listed on stock exchanges in the United States. It is one of the oldest and most well-known indices in the world.
+% United States Oil Fund (USO): USO aims to track the daily price movements of West Texas Intermediate (WTI) light, sweet crude oil. It provides exposure to oil prices and is used to gain exposure to the energy market.
 
-Bitwise 10 Crypto Index Fund (BITW): BITW aims to track the performance of the Bitwise 10 Large Cap Crypto Index, which is designed to provide exposure to the 10 largest cryptocurrencies, weighted by market capitalization.
+% Dow Jones Industrial Average (DJI): The DJIA is a stock market index that measures the stock performance of 30 large, publicly-owned companies listed on stock exchanges in the United States. It is one of the oldest and most well-known indices in the world.
+
+% Bitwise 10 Crypto Index Fund (BITW): BITW aims to track the performance of the Bitwise 10 Large Cap Crypto Index, which is designed to provide exposure to the 10 largest cryptocurrencies, weighted by market capitalization.
 
 ALL data is fetched from Yahoo Finance via yfinance. \cite{yfinance}. In terms of dates, unless otherwise specified, the default dates from Jan 1st, 2022 to Jan 1st, 2024. We use the daily adjusted close data as our data points, which is ample to provide various analysis.
