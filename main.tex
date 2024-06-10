@@ -1,5 +1,9 @@
 \documentclass{ledger}
 
+\usepackage[parfill]{parskip} % Adds space between paragraphs
+\setlength{\parskip}{0.5\baselineskip} % Adjust this value to set the space
+
+\usepackage{enumitem} % To use [itemsep]
 \usepackage{hyperref}
 \usepackage{booktabs}
 \usepackage{array}
@@ -19,8 +23,8 @@
 %EDITOR: replace X's to set the data for the header and footer
 \newcommand{\thefirstpagenum}[0]{X}
 \newcommand{\thelastpagenum}[0]{X}
-\newcommand{\theyear}[0]{20XX}
-\newcommand{\thevol}[0]{X}
+\newcommand{\theyear}[0]{2024}
+\newcommand{\thevol}[0]{1}
 \newcommand{\thedoi}[0]{DOI 10.5195/LEDGER.\theyear.XXX}
 \newcommand{\ledgerpages}[0]{\thefirstpagenum-\thelastpagenum}
 
@@ -68,13 +72,13 @@ This research project aims to conduct a comprehensive study on state-of-the-art 
 
 %AUTHOR: keywords are OK to show for Review article, will be hidden and added to metadata for publication
 \begin{keywords}
-\item State-of-the-art.
-\item Alternative asset models.
+\item Digital Assets.
+\item Cryptocurrency.
 \item Digital assets.
 \item Cryptocurrency.
-\item Application.
-\item Feasibility.
-\item Effectiveness.
+\item Capital Asset Pricing Model.
+\item GARCH.
+\item LSTM.
 \item Portfolio theory.
 \item Factor-based models.
 \item Risk management.
@@ -185,12 +189,85 @@ AVAX-USD & -2382.263883 & -2363.908177 & 0.051174 & $0.000000 \times 10^{0}$ \\
 \end{tabular}
 \end{table}
 
+\pagebreak
+\setcounter{section}{2}
+\section{LSTM Model Performance}\label{appendix:lstm_model_performance}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Currency} & \textbf{MSE} & \textbf{RMSE} & \textbf{MAE} \\ \hline
+BTC-USD            & 122.7408     & 11.0788       & 9.6324       \\ \hline
+ETH-USD            & 5.1563       & 2.2707        & 1.7916       \\ \hline
+SOL-USD            & 66.9456      & 8.1820        & 5.6560       \\ \hline
+BNB-USD            & 10.5760      & 3.2521        & 2.7498       \\ \hline
+XRP-USD            & 12.9696      & 3.6013        & 2.5955       \\ \hline
+TON-USD            & 14.2665      & 3.7771        & 2.5101       \\ \hline
+DOGE-USD           & 12.8400      & 3.5833        & 3.0690       \\ \hline
+ADA-USD            & 12.9987      & 3.6054        & 2.2348       \\ \hline
+SHIB-USD           & 3.9456       & 1.9864        & 1.5389       \\ \hline
+AVAX-USD           & 17.2950      & 4.1587        & 2.6117       \\ \hline
+AAPL               & 11.3952      & 3.3757        & 2.8441       \\ \hline
+MSFT               & 5.6494       & 2.3769        & 2.0422       \\ \hline
+AMZN               & 5.6246       & 2.3716        & 2.1080       \\ \hline
+GOOGL              & 7.1335       & 2.6709        & 2.3629       \\ \hline
+TSLA               & 1.8969       & 1.3773        & 1.0470       \\ \hline
+SPY                & 4.5698       & 2.1377        & 1.7859       \\ \hline
+AGG                & 1.9322       & 1.3900        & 1.1153       \\ \hline
+PSP                & 2.5490       & 1.5966        & 1.2196       \\ \hline
+VNQ                & 2.6887       & 1.6397        & 1.2655       \\ \hline
+SLV                & 5.4785       & 2.3406        & 1.9826       \\ \hline
+GLD                & 6.8850       & 2.6239        & 2.1623       \\ \hline
+USO                & 3.7553       & 1.9379        & 1.6480       \\ \hline
+
+\end{tabular}
+\caption{LSTM Performance Metrics}
+\label{tab:crypto_metrics}
+\end{table}
+
+
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/btc_usd_loss.png} % Adjust the width as needed
+    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
+    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/btc_usd_price.png} % Adjust the width as needed
+    \caption{Caption for the images}
+    \label{fig:side_by_side}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/btc_usd_loss.png} % Adjust the width as needed
+    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
+    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/btc_usd_price.png} % Adjust the width as needed
+    \caption{Caption for the images}
+    \label{fig:side_by_side}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/btc_usd_loss.png} % Adjust the width as needed
+    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
+    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/btc_usd_price.png} % Adjust the width as needed
+    \caption{Caption for the images}
+    \label{fig:side_by_side}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/btc_usd_loss.png} % Adjust the width as needed
+    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
+    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/btc_usd_price.png} % Adjust the width as needed
+    \caption{Caption for the images}
+    \label{fig:side_by_side}
+\end{figure}
+
 
 \thispagestyle{pagelast}
-
-
-
-
 
 %\theendnotes
 

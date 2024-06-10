@@ -109,25 +109,121 @@ To investigate the time-varying volatility of different financial assets via the
 
 \subsection{Valuation}
 
-For cryptocurrencies:
-\[
-\text{Intrinsic Value} = \frac{P \times Q}{V}
-\]
+% For cryptocurrencies:
+% \[
+% \text{Intrinsic Value} = \frac{P \times Q}{V}
+% \]
 
-Results
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.8\textwidth]{./code/valuation-techniques/intrinsic_value.png}
-    \caption{Intrinsic Value }
-    \label{fig:beta}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{./code/valuation-techniques/intrinsic_value.png}
+%     \caption{Intrinsic Value}
+%     \label{fig:beta}
+% \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{./code/valuation-techniques/nvt_ratio.png}
+    \includegraphics[width=0.8\textwidth]{code/valuation-techniques/nvt_ratio.png}
     \caption{Network Value to Transactions Ratios}
     \label{fig:beta}
 \end{figure}
 
 We have to make some assumptions or gather data for $V$ (velocity), $P$ (price level), and $Q$ (transaction volume).
+
+\subsection{LSTM Model}
+
+Preprocessing Steps
+
+Historical price data for the top 10 cryptocurrencies were fetched using the yfinance library, covering the period from January 1, 2022, to January 1, 2024.
+
+The MinMaxScaler from scikit-learn\cite{scikit-learn} was used to normalize the 'Adj Close' price data to a range between 0 and 1. This is crucial for LSTM models, which are sensitive to the scale of input data.
+
+\subsubsection{Model Architecture and Key Values}
+
+In our research, we developed a Bidirectional Long Short-Term Memory (LSTM) model for time series forecasting. Below is a detailed breakdown of the key values and components of our model:
+
+\begin{itemize}
+    \item {Sequence Length (SEQ\_LEN)}: 100
+    \item {Dropout Rate (DROPOUT)}: 0.2
+    \item {Window Size (WINDOW\_SIZE)}: \(SEQ_LEN - 1 = 99\)
+    \item {Batch Size (BATCH\_SIZE)}: 64
+\end{itemize}
+
+\subsubsection{Model Layers and Structure}
+
+\begin{enumerate}
+    \item {Input Layer}:
+    \begin{itemize}
+        \item Shape: (WINDOW\_SIZE, Number of Features in Input)
+        \item Key Value: \texttt{input\_shape = (WINDOW\_SIZE, X\_train.shape[-1])}
+    \end{itemize}
+
+    \item {First Bidirectional LSTM Layer}:
+    \begin{itemize}
+        \item Units: WINDOW\_SIZE = 99
+        \item Return Sequences: True
+        \item Key Value: \texttt{model.add(Bidirectional(LSTM(WINDOW\_SIZE, return\_sequences=True)))}
+    \end{itemize}
+
+    \item {First Dropout Layer}:
+    \begin{itemize}
+        \item Rate: DROPOUT = 0.2
+        \item Key Value: \texttt{model.add(Dropout(rate=DROPOUT))}
+    \end{itemize}
+
+    \item {Second Bidirectional LSTM Layer}:
+    \begin{itemize}
+        \item Units: WINDOW\_SIZE * 2 = 198
+        \item Return Sequences: True
+        \item Key Value: \texttt{model.add(Bidirectional(LSTM(WINDOW\_SIZE * 2, return\_sequences=True)))}
+    \end{itemize}
+
+    \item {Second Dropout Layer}:
+    \begin{itemize}
+        \item Rate: DROPOUT = 0.2
+        \item Key Value: \texttt{model.add(Dropout(rate=DROPOUT))}
+    \end{itemize}
+
+    \item {Third Bidirectional LSTM Layer}:
+    \begin{itemize}
+        \item Units: WINDOW\_SIZE = 99
+        \item Return Sequences: False
+        \item Key Value: \texttt{model.add(Bidirectional(LSTM(WINDOW\_SIZE, return\_sequences=False)))}
+    \end{itemize}
+
+    \item {Dense Layer}:
+    \begin{itemize}
+        \item Units: 1
+        \item Key Value: \texttt{model.add(Dense(units=1))}
+    \end{itemize}
+
+    \item {Activation Layer}:
+    \begin{itemize}
+        \item Activation Function: Linear
+        \item Key Value: \texttt{model.add(Activation('linear'))}
+    \end{itemize}
+\end{enumerate}
+
+\section*{Model Compilation}
+
+\begin{itemize}
+    \item Loss Function: Mean Squared Error
+    \item Optimizer: Adam
+    \item Key Value: \texttt{model.compile(loss='mean\_squared\_error', optimizer='adam')}
+\end{itemize}
+
+\section*{Model Training Parameters}
+
+\begin{itemize}
+    \item Epochs: 50
+    \item Batch Size: BATCH\_SIZE = 64
+    \item Shuffle: False
+    \item Validation Split: 10\%
+    \item Key Value: \texttt{model.fit(X\_train, y\_train, epochs=50, batch\_size=BATCH\_SIZE, shuffle=False, validation\_split=0.1)}
+\end{itemize}
+
+\section*{Summary}
+
+We utilized a Bidirectional LSTM model with three layers of bidirectional LSTMs, each followed by dropout layers to prevent overfitting. The final dense layer with a linear activation function is used for regression. Our model is compiled using the mean squared error loss function and the Adam optimizer, and trained over 50 epochs with a batch size of 64, using 10\% of the training data for validation.
+
+This architecture effectively captures temporal dependencies in both directions, making it suitable for time series forecasting tasks.

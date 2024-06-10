@@ -77,22 +77,22 @@
 
 % here are all the headers
 % we need to create three page styles pagefirst, pagemain and pagelast
-\fancypagestyle{pagefirst}{%
-  \fancyhf{}%
-  \lhead{\includegraphics[height=1cm]{logoNewUC}}%
-  % \lhead{Left top first}%
-  % \rhead{Right top first}%
-  % \lfoot{Left bottom first}%
-  % \rfoot{Right bottom first}%
-    \rhead{\raisebox{1cm-\height}
-    {\begin{minipage}[t]{.48\textwidth}
-      \begin{flushright}
-      \fontsize{8pt}{8pt}\selectfont \sffamily\color{gray}ISSN 2379-5980 (online)
-      \\ \thedoi
-      \end{flushright}
-    \end{minipage}}
-    }
-}
+% \fancypagestyle{pagefirst}{%
+%   \fancyhf{}%
+%   \lhead{\includegraphics[height=1cm]{logoNewUC}}%
+%   % \lhead{Left top first}%
+%   % \rhead{Right top first}%
+%   % \lfoot{Left bottom first}%
+%   % \rfoot{Right bottom first}%
+%     \rhead{\raisebox{1cm-\height}
+%     {\begin{minipage}[t]{.48\textwidth}
+%       \begin{flushright}
+%       \fontsize{8pt}{8pt}\selectfont \sffamily\color{gray}ISSN 2379-5980 (online)
+%       \\ \thedoi
+%       \end{flushright}
+%     \end{minipage}}
+%     }
+% }
 
 
 \fancypagestyle{pagemain}{%
