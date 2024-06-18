@@ -1,95 +1,84 @@
-\documentclass{ledger}
+\documentclass[12pt]{article}
 
-\usepackage[parfill]{parskip} % Adds space between paragraphs
-\setlength{\parskip}{0.5\baselineskip} % Adjust this value to set the space
 
+\usepackage{PRIMEarxiv}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{lipsum}
+\usepackage{fancyhdr}       % header
+\usepackage{graphicx}       % graphics
+\graphicspath{{media/}}     % organize your images and other figures under media/ folder
+
+\usepackage{amsmath}
 \usepackage{enumitem} % To use [itemsep]
-\usepackage{hyperref}
-\usepackage{booktabs}
+% \usepackage{hyperref}
+% \usepackage{booktabs}
 \usepackage{array}
 \usepackage{geometry}
 \usepackage{longtable}
-\geometry{a4paper, margin=1in}
-\usepackage{tabularx}
 
-%AUTHOR: This is a bare-bones template into which you may put your paper to aid in formatting your submission to Ledger. Note that to work properly, you must have the files "ledger.cls", "ledgerbib.bst", and the folder "images" on hand. 
+%Header
+\pagestyle{fancy}
+\thispagestyle{empty}
+\rhead{ \textit{ }} 
 
-%AUTHOR: the preferred method to generate PDF output is to use 'pdflatex'
-%To clean up after a successful build, try: 'latexmk -c main.tex'
-
-%EDITOR: in ledger.cls replace logoNewUC.png with logoNew.png prior to publication 
-
-
-%EDITOR: replace X's to set the data for the header and footer
-\newcommand{\thefirstpagenum}[0]{X}
-\newcommand{\thelastpagenum}[0]{X}
-\newcommand{\theyear}[0]{2024}
-\newcommand{\thevol}[0]{1}
-\newcommand{\thedoi}[0]{DOI 10.5195/LEDGER.\theyear.XXX}
-\newcommand{\ledgerpages}[0]{\thefirstpagenum-\thelastpagenum}
+% Update your Headers here
+\fancyhead[LO]{A Study on State-of-the-Art Asset Models and Their Application to Digital Assets}
+% \fancyhead[RE]{Firstauthor and Secondauthor} % Firstauthor et al. if more than 2 - must use \documentclass[twoside]{article}
 
 
-%AUTHOR: please set these to generate correct PDF metadata
-\hypersetup{pdfauthor={Sun, Ephraim T.; 
-Gijsbertsen, Laurens C.}, pdftitle={A Study on State-of-the-Art Alternative Asset Models and Their Application to Digital Assets}}
 
-%EDITOR: set the correct pageination during layout
-%\setcounter{page}{\thefirstpagenum}
-
-
-%AUTHOR: this can be used to highlight changed text, surround with \edit{} and
-%uncomment either to determine color
-%\newcommand{\edit}[1]{{\color{red} #1}}
-\newcommand{\edit}[1]{#1}
-	
-\overfullrule=10pt
-
-\title{A Study on State-of-the-Art Alternative Asset Models and Their Application to Digital Assets
+  
+%% Title
+\title{A Study on State-of-the-Art Asset Models and Their Application to Digital Assets
+%%%% Cite as
+%%%% Update your official citation here when published 
+\thanks{\textit{\underline{Citation}}: 
+\textbf{Ephraim S., Laurens G., A Study on State-of-the-Art Asset Models and Their Application to Digital Assets. Journal of Finance. 2024; 50(2):123-135. DOI:10.1234/jof.2024.0001.}} 
 }
-\author{Dr. Simon Mak\thanks{S. Mak (smak@smu.edu) - Faculty Advisor, Director of the Caruth Institute for Entrepreneurship}, Ephraim T. Sun\thanks{E. Sun (ephraims@smu.edu)} , Laurens C. Gijsbertsen,\thanks{L. Gijsbertsen (lgijsbertsen@smu.edu)}}
 
-\pagestyle{pagemain}
-
-
-%The Author should select the appropriate pretitle below:
-% \pretitle{
-%   % \centering \selectfont LEDGER \LaTeX \ TEMPLATE \par
-%   %\centering \selectfont REVIEW ARTICLE \par
-%   %\centering \selectfont RESEARCH ARTICLE \par 
-%   %The Author should not remove the following text:
-%   % Submission Under Consideration at Ledger \par 
-%   \fontsize{24pt}{28pt}\selectfont} % Title is centered and at 24pt
+\author{
+  Ephraim Sun \\
+  Lyle School of Engineering \\
+  Southern Methodist University \\
+  \texttt{ephraims@smu.edu} \\
+  %% examples of more authors
+   \And
+  Laurens Gijsbertsen \\
+  Cox School of Business \\
+  Southern Methodist University \\
+  \texttt{lgijsbertsen@smu.edu} \\
+    \And
+  Dr. Simon Mak \\
+  Director of the Caruth Institute \\
+  Southern Methodist University \\
+  \texttt{smak@smu.edu} \\
+}
 
 
 \begin{document}
-
 \maketitle
 
-\thispagestyle{pagefirst}
 
 \begin{abstract}
-This research project aims to conduct a comprehensive study on state-of-the-art alternative asset models and their application to digital assets. As the financial landscape continues to evolve, alternative assets, specifically digital assets, are gaining significant attention, and becoming increasingly relevant for investors. However, there is a lack of rigorous research and understanding of the various alternative asset investment models and their implications for digital assets. The primary research question driving this study is: "\textit{To what extent can existing alternative asset investing models be applied to digital assets?}" By examining and analyzing various alternative asset models, this research project seeks to assess the feasibility and effectiveness of applying these models to digital assets.
-
-%AUTHOR: keywords are OK to show for Review article, will be hidden and added to metadata for publication
-\begin{keywords}
-\item Digital Assets.
-\item Cryptocurrency.
-\item Digital assets.
-\item Cryptocurrency.
-\item Capital Asset Pricing Model.
-\item GARCH.
-\item LSTM.
-\item Portfolio theory.
-\item Factor-based models.
-\item Risk management.
-\end{keywords}
+This research project aims to conduct a comprehensive study on state-of-the-art asset models and their application to digital assets. As the financial landscape continues to evolve, alternative assets, specifically digital assets, are gaining significant attention, and becoming increasingly relevant for investors. However, there is a lack of rigorous research and understanding of the various alternative asset investment models and their implications for digital assets. The primary research question driving this study is: "\textit{To what extent can existing alternative asset investing models be applied to digital assets?}" By examining and analyzing various alternative asset models, this research project seeks to assess the feasibility and effectiveness of applying these models to digital assets.
 \end{abstract}
+
+
+% keywords can be removed
+\keywords{Digital Assets \and Cryptocurrency \and Capital Asset Pricing Model \and GARCH \and LSTM \and Portfolio Theory \and Risk Management}
+
 
 \input{src/intro}
 
 \input{src/overview}
-
-\input{src/digital_asset_landscape}
 
 \input{src/data_composition}
 
@@ -97,343 +86,14 @@ This research project aims to conduct a comprehensive study on state-of-the-art 
 
 \input{src/analysis}
 
-%define the following sections to hide their Section Number (Notes Style)
-\ledgernotes
+\input{src/conclusion}
 
-\section*{Acknowledgements} 
+\input{src/acknowledgements}
 
-We would like to express our sincere gratitude to Dr. Simon Mak for his invaluable guidance and support in both the SMU Blockchain Club and this research paper. We also wish to acknowledge the SMU Blockchain Club community for their support and collaboration, which were instrumental to this work. Special thanks go to the Engaged Learning Fellowship Program, particularly Jennifer Ebinger, Senior Director, and Adam Neal, Program Manager, for their encouragement and assistance. Lastly, we extend our heartfelt thanks to Southern Methodist University for their generous financial support.
+\newpage	
+\bibliographystyle{unsrt}  
+\bibliography{references}
 
-%AUTHOR: comment out if using thebibliography
-%\theendnotes
-
-%AUTHOR: please read ledgerbib.bst usage notes by opening it in a text editor. We have modified it to include the use of the @misc item type for the proper formatting of online sources.
-
-\bibliographystyle{ledgerbib}
-\bibliography{tempbib}
-
-%AUTHOR: comment out, this is used to make sure the Creative Commons License
-%image fits on page
-
-\newpage 	
-%define the following sections to have the Appendix Style
-
-\appendix
-\setcounter{section}{0}
-\section{Capital Asset Pricing Model (CAPM) Details}\label{appendix:capm_details}
-
-\begin{longtable}{|l|l|c|c|c|c|}
-\hline
-\textbf{Asset} & \textbf{Asset Class} & \textbf{Beta} & \textbf{Expected Return (CAPM)} & \textbf{R-squared} & \textbf{p-value} \\
-\hline
-AAPL & Equities & 0.1489 & 0.0294 & 0.1295 & $1.22 \times 10^{-23}$ \\
-MSFT & Equities & 0.1469 & 0.0295 & 0.1127 & $1.30 \times 10^{-20}$ \\
-AMZN & Equities & 0.2194 & 0.0270 & 0.1310 & $6.41 \times 10^{-24}$ \\
-GOOGL & Equities & 0.1653 & 0.0289 & 0.1108 & $2.83 \times 10^{-20}$ \\
-TSLA & Equities & 0.2734 & 0.0251 & 0.1018 & $1.13 \times 10^{-18}$ \\
-SPY & Equities & 0.1084 & 0.0308 & 0.1519 & $8.59 \times 10^{-28}$ \\
-DJI & Equities & 0.0089 & 0.0343 & 0.0176 & $3.32 \times 10^{-4}$ \\
-AGG & Bonds & 0.0115 & 0.0342 & 0.0108 & 0.5081 \\
-VNQ & Real Estate & 0.0884 & 0.0315 & 0.0754 & $4.80 \times 10^{-14}$ \\
-GLD & Commodities & 0.0195 & 0.0339 & 0.0091 & 0.1010 \\
-USO & Commodities & 0.0408 & 0.0332 & 0.0059 & 0.0387 \\
-SLV & Commodities & 0.0671 & 0.0323 & 0.0291 & $3.73 \times 10^{-6}$ \\
-PSP & Private Equity & 0.1596 & 0.0291 & 0.1584 & $5.26 \times 10^{-29}$ \\
-BTC-USD & Cryptos & 0.4680 & 0.0184 & 0.3584 & $6.78 \times 10^{-72}$ \\
-ETH-USD & Cryptos & 0.5448 & 0.0157 & 0.3008 & $2.47 \times 10^{-58}$ \\
-SOL-USD & Cryptos & 0.7253 & 0.0095 & 0.2163 & $2.76 \times 10^{-40}$ \\
-BNB-USD & Cryptos & 0.3944 & 0.0209 & 0.2106 & $3.79 \times 10^{-39}$ \\
-XRP-USD & Cryptos & 0.5699 & 0.0149 & 0.1991 & $7.28 \times 10^{-37}$ \\
-TON-USD & Cryptos & 0.4154 & 0.0202 & 0.0721 & $1.78 \times 10^{-13}$ \\
-DOGE-USD & Cryptos & 0.4995 & 0.0173 & 0.1583 & $5.43 \times 10^{-29}$ \\
-ADA-USD & Cryptos & 0.5541 & 0.0154 & 0.2331 & $9.96 \times 10^{-44}$ \\
-SHIB-USD & Cryptos & 0.5231 & 0.0165 & 0.1156 & $3.89 \times 10^{-21}$ \\
-AVAX-USD & Cryptos & 0.6062 & 0.0136 & 0.1888 & $7.68 \times 10^{-35}$ \\
-\hline
-\end{longtable}
-
-\pagebreak
-\setcounter{section}{1}
-\section{GARCH Model Analysis}\label{appendix:garch_comparison}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|c|c|c|c|}
-\hline
-\textbf{Asset} & \textbf{AIC} & \textbf{BIC} & \textbf{Std. Dev. of Residuals} & \textbf{ADF P-value} \\
-\hline
-AAPL & -4104.141419 & -4085.785713 & 0.015185 & $1.101250 \times 10^{-10}$ \\
-MSFT & -3958.459076 & -3940.103370 & 0.016048 & $0.000000 \times 10^{0}$ \\
-AMZN & -3527.632538 & -3509.276832 & 0.022235 & $0.000000 \times 10^{0}$ \\
-GOOGL & -3761.433980 & -3743.078274 & 0.018217 & $0.000000 \times 10^{0}$ \\
-TSLA & -2975.230946 & -2956.875240 & 0.031426 & $3.389710 \times 10^{-17}$ \\
-SPY & -4706.649643 & -4688.293937 & 0.010198 & $0.000000 \times 10^{0}$ \\
-AGG & -5943.267510 & -5924.911804 & 0.004055 & $0.000000 \times 10^{0}$ \\
-PSP & -4134.885264 & -4116.529558 & 0.014713 & $3.796390 \times 10^{-14}$ \\
-VNQ & -4397.181876 & -4378.826170 & 0.011807 & $0.000000 \times 10^{0}$ \\
-SLV & -4097.102350 & -4078.746644 & 0.014428 & $0.000000 \times 10^{0}$ \\
-GLD & -5061.309177 & -5042.953471 & 0.007486 & $2.703564 \times 10^{-13}$ \\
-USO & -3713.532179 & -3695.176474 & 0.019503 & $1.610235 \times 10^{-20}$ \\
-DJI & -8670.546027 & -8652.190321 & 0.002467 & $8.834765 \times 10^{-23}$ \\
-BTC-USD & -3158.715890 & -3140.360184 & 0.028678 & $0.000000 \times 10^{0}$ \\
-ETH-USD & -2872.649475 & -2854.293769 & 0.036436 & $2.822524 \times 10^{-14}$ \\
-SOL-USD & -2203.137317 & -2184.781611 & 0.057214 & $7.252747 \times 10^{-13}$ \\
-BNB-USD & -3081.403029 & -3063.047323 & 0.031529 & $0.000000 \times 10^{0}$ \\
-XRP-USD & -2394.737021 & -2376.381316 & 0.046846 & $0.000000 \times 10^{0}$ \\
-TON-USD & -2399.471006 & -2381.115300 & 0.056736 & $8.855518 \times 10^{-17}$ \\
-DOGE-USD & -2600.240098 & -2581.884392 & 0.046055 & $2.419880 \times 10^{-11}$ \\
-ADA-USD & -2626.560777 & -2608.205071 & 0.042101 & $3.112660 \times 10^{-13}$ \\
-SHIB-USD & -2156.569383 & -2138.213677 & 0.056434 & $6.159495 \times 10^{-25}$ \\
-AVAX-USD & -2382.263883 & -2363.908177 & 0.051174 & $0.000000 \times 10^{0}$ \\
-\hline
-\end{tabular}
-\end{table}
-
-\pagebreak
-\setcounter{section}{2}
-\section{LSTM Model Performance}\label{appendix:lstm_model_performance}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|c|c|c|c|}
-\hline
-\textbf{Currency} & \textbf{MSE} & \textbf{RMSE} & \textbf{MAE} \\ \hline
-BTC-USD            & 122.7408     & 11.0788       & 9.6324       \\ \hline
-ETH-USD            & 5.1563       & 2.2707        & 1.7916       \\ \hline
-SOL-USD            & 66.9456      & 8.1820        & 5.6560       \\ \hline
-BNB-USD            & 10.5760      & 3.2521        & 2.7498       \\ \hline
-XRP-USD            & 12.9696      & 3.6013        & 2.5955       \\ \hline
-TON-USD            & 14.2665      & 3.7771        & 2.5101       \\ \hline
-DOGE-USD           & 12.8400      & 3.5833        & 3.0690       \\ \hline
-ADA-USD            & 12.9987      & 3.6054        & 2.2348       \\ \hline
-SHIB-USD           & 3.9456       & 1.9864        & 1.5389       \\ \hline
-AVAX-USD           & 17.2950      & 4.1587        & 2.6117       \\ \hline
-AAPL               & 11.3952      & 3.3757        & 2.8441       \\ \hline
-MSFT               & 5.6494       & 2.3769        & 2.0422       \\ \hline
-AMZN               & 5.6246       & 2.3716        & 2.1080       \\ \hline
-GOOGL              & 7.1335       & 2.6709        & 2.3629       \\ \hline
-TSLA               & 1.8969       & 1.3773        & 1.0470       \\ \hline
-SPY                & 4.5698       & 2.1377        & 1.7859       \\ \hline
-AGG                & 1.9322       & 1.3900        & 1.1153       \\ \hline
-PSP                & 2.5490       & 1.5966        & 1.2196       \\ \hline
-VNQ                & 2.6887       & 1.6397        & 1.2655       \\ \hline
-SLV                & 5.4785       & 2.3406        & 1.9826       \\ \hline
-GLD                & 6.8850       & 2.6239        & 2.1623       \\ \hline
-USO                & 3.7553       & 1.9379        & 1.6480       \\ \hline
-DJI                & 118757.723275       & 344.612425        & 275.020303       \\ \hline
-\hline
-\end{tabular}
-\end{table}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/btc_usd_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/btc_usd_price.png} % Adjust the width as needed
-    \caption{Bitcoin (BTC) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/eth_usd_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/eth_usd_model.png} % Adjust the width as needed
-    \caption{Ethereum (ETH) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/sol_usd_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/sol_usd_price.png} % Adjust the width as needed
-    \caption{Solana (SOL) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/bnb_usd_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/bnb_usd_price.png} % Adjust the width as needed
-    \caption{BNB (BNB) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/xrp_usd_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/xrp_usd_price.png} % Adjust the width as needed
-    \caption{XRP (XRP) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/ton_usd_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/ton_usd_price.png} % Adjust the width as needed
-    \caption{TON (TON) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/doge_usd_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/doge_usd_price.png} % Adjust the width as needed
-    \caption{Doge (DOGE) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/ada_usd_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/ada_usd_price.png} % Adjust the width as needed
-    \caption{Cardano (ADA) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/shib_usd_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/shib_usd_price.png} % Adjust the width as needed
-    \caption{Shiba Inu (SHIB) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/avax_usd_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/avax_usd_price.png} % Adjust the width as needed
-    \caption{Avalanche (AVAX) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/aapl_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/aapl_price.png} % Adjust the width as needed
-    \caption{Apple (AAPL) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/msft_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/msft_price.png} % Adjust the width as needed
-    \caption{Microsoft (MSFT) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/amzn_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/amzn_price.png} % Adjust the width as needed
-    \caption{Amazon (AMZN) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/googl_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/googl_price.png} % Adjust the width as needed
-    \caption{Google (GOOGL) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/tsla_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/tsla_price.png} % Adjust the width as needed
-    \caption{Tesla (TSLA) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/spy_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/spy_price.png} % Adjust the width as needed
-    \caption{SPDR S\&P 500 ETF Trust (SPY) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/agg_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/agg_price.png} % Adjust the width as needed
-    \caption{iShares Core US Aggregate Bond ETF (AGG) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/psp_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/psp_price.png} % Adjust the width as needed
-    \caption{Invesco Global Listed Private Equity ETF (PSP) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/vnq_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/vnq_price.png} % Adjust the width as needed
-    \caption{Vanguard Real Estate Index Fund ETF (VNQ) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/slv_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/slv_price.png} % Adjust the width as needed
-    \caption{iShares Silver Trust (SLV) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/gld_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/gld_price.png} % Adjust the width as needed
-    \caption{SPDR Gold Trust (GLD) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/uso_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/uso_price.png} % Adjust the width as needed
-    \caption{United States Oil Fund LP (USO) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/^dji_loss.png} % Adjust the width as needed
-    \hspace{0.05\textwidth} % Adjust the horizontal spacing between images
-    \includegraphics[width=0.45\textwidth]{code/price-prediction/lstm/images/^dji_price.png} % Adjust the width as needed
-    \caption{Dow Jones Industrial Average (DJI) Model Training}
-    \label{fig:side_by_side}
-\end{figure}
-
-\thispagestyle{pagelast}
-
-%\theendnotes
+\input{src/appendix}
 
 \end{document}
