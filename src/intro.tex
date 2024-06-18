@@ -1,17 +1,49 @@
 \section{Introduction}
-\subsection{Background}
-Digital assets have grown rapidly in recent years, with the total market cap of cryptocurrencies surpassing \$2 trillion in 2021. While digital assets hold promising investment opportunities, the volatile and decentralized nature of this new asset class presents unique investment challenges compared to traditional assets. As investor interest in digital assets continues to grow, there is a need to explore best practices for evaluating and managing risks associated with digital asset investments.
+Digital assets have grown rapidly in recent years, with the total market cap of cryptocurrencies surpassing \$2 trillion in 2021\cite{CNBCCryptoMarketCap}. While digital assets hold promising investment opportunities, the volatile and decentralized nature of this new asset class presents unique investment challenges compared to traditional assets. As investor interest in digital assets continues to grow, there is a need to explore best practices for evaluating digital asset investments.
 
-Alternative asset investing offers strategies that may help address some of the challenges with digital assets. However, applying traditional alternative asset models directly to digital assets is not straightforward given key differences in their characteristics. It is therefore important to examine existing models and understand how they may need to be adapted for the digital asset landscape.
+Applying models from other asset classes provides strategies that might help tackle some challenges associated with digital assets. However, directly transferring traditional asset models to digital assets can be both straightforward and complex due to significant differences in their characteristics. Therefore, it is crucial to review existing models and determine how they should be adjusted for the digital asset landscape.
 
-\subsubsection{Alternative Asset Models}
-A wide range of alternative asset investing models have been developed and applied across various private market asset classes such as private equity, private credit, real assets and hedge funds. Common models used include portfolio theory, factor models, mean-variance optimization, and risk parity frameworks.
 
-While these models have proven valuable in traditional alternative investments, it remains unclear whether and how they can be applied to digital assets. Digital assets such as cryptocurrencies differ significantly from traditional assets in factors like volatility, liquidity profile and regulatory oversight (FINRA.org).
+\subsection{Traditional Asset}
+When we refer to traditional assets, we mean any other asset class that is not related to digital assets or cryptocurrencies. This includes stocks, bonds, real estate, commodities, private equity, private credit, real assets, and hedge funds. The development of asset models has a rich history that spans several decades, reflecting the evolution of financial theory and practice:
 
-\subsection {Digital Assets}
+The foundations of modern financial theory were laid with the introduction of the concept of diversification and the risk-return tradeoff. Louis Bachelier's 1900 thesis \cite{Bachelier1900}, "The Theory of Speculation," introduced the idea of modeling stock prices using Brownian motion. Harry Markowitz's pioneering work on Modern Portfolio Theory (MPT)\cite{Markowitz1952} in 1952 formalized the concept of diversification. MPT introduced the mean-variance optimization framework, which helps investors construct portfolios that maximize expected return for a given level of risk. William Sharpe, John Lintner, and Jan Mossin developed the Capital Asset Pricing Model (CAPM)\cite{Perold2004} independently in the mid-1960s. CAPM describes the relationship between systematic risk and expected return for assets, providing a method to price risk. The Black-Scholes Model\cite{BlackScholes1973}, developed by Fischer Black, Myron Scholes, and Robert Merton in 1973, revolutionized options pricing by providing a theoretical estimate of the price of European-style options. Factor models, such as the Fama-French three-factor model\cite{FamaFrench1992} introduced in 1992, expanded on CAPM by incorporating additional factors like size and value to better explain asset returns.
+
+More recently, the advent of advanced computing and big data has led to the rise of machine learning models and algorithms, which are increasingly used for price prediction, risk management, and portfolio optimization. These models leverage vast datasets and computational power to uncover complex patterns and relationships in financial markets.
+
+\subsection{Digital Assets}
+
 Cryptocurrencies were the first widely adopted digital assets, with Bitcoin being the largest. Since then, new digital asset classes have emerged including security tokens representing asset ownership, and utility tokens providing access to a network or platform.
 
-Digital assets present both opportunities and challenges from an investment perspective. While some studies show they can provide portfolio diversification benefits, their short history makes volatility and risk difficult to assess over long periods (FINRA.org). Regulatory ambiguity also introduces legal and compliance complexities for investors (CRS Reports, 2023).
+Digital assets present both opportunities and challenges from an investment perspective. While some studies show they can provide portfolio diversification benefits, their short history makes volatility and risk difficult to assess over long periods.
 
-Connecting these concepts, there is a need for research exploring whether and how existing alternative asset investing approaches could benefit the growth of a regulated digital asset investment industry. This paper aims to address this gap by systematically analyzing various models and evaluating their applicability to different digital asset classes.
+While traditional asset models offer a valuable starting point, their direct application to digital assets requires careful consideration and adjustment. Digital assets, such as cryptocurrencies, differ significantly from traditional assets in certain aspects:
+
+- Volatility: Cryptocurrencies are known for their extreme price volatility, which can be much higher than that of traditional assets.
+
+- Liquidity Profile: The liquidity of digital assets can vary widely. While some cryptocurrencies have high liquidity, others may have very limited trading volume, affecting their price stability and the ability to execute large trades without significant price impact.
+
+- Regulatory Oversight: Digital assets operate in a relatively nascent regulatory environment compared to traditional assets.
+
+\subsection{Research Purpose}
+
+Throughout this paper, we look forward to examine the extent of different models and its application to digital assets. The research paper is broken down into its following categories with its corresponding models
+
+Risk and Return Analysis
+
+- Capital Asset Pricing Model (CAPM)
+
+Volatility Analysis
+
+- Generalized Autoregressive Conditional Heteroskedasticity Model (GARCH) 
+
+
+Valuation Techniques
+
+- Network Value to Transaction Model (NVT)
+
+Price Prediction
+
+- Long Short-Term Memory Model (LSTM)
+
+The following section dives deeper into each model.

@@ -1,26 +1,94 @@
 \section{Analysis}
 \subsection{CAPM Analysis}
 
-From the period measured of Jan 01, 2022 to Jan 01, 2024, we see that all assets are less than 1 to the BITW market index, meaning that they are less volatile compared to the assets in the BITW. We expect and see that the cryptocurrencies coin have betas higher than the other asset class measure. The beta is then followed by FAANG stocks like Apple, Amazon, Google. We do see PSP and VNQ within the same beta range of 0.1 - 0.2. 
+Analysis of CAPM Results
+From the CAPM (Capital Asset Pricing Model) analysis conducted for the period from January 01, 2022, to January 01, 2024, the following insights can be derived:
 
-More over, if we further observe, we see the expected return of all assets not-including cryptocurrencies have a high expected return between 2.5\% - 3.5\%. Cryptocurrencies fall in the range between 0.9\% and 0.22\%, incremental gains compared to the rest of the market.
+Beta Analysis:
 
-Overall, we can observe that there is a significant difference in risk and return between regular assets classes like stocks, gold, real estate to cryptocurrencies. More analysis needs to be made to draw further conclusions and longer time horizons need to be observed, but the returns gained from cryptocurrencies stems differently from the returns of other assets, possibly via the different risk exposure in the market.
+Cryptocurrencies: Cryptocurrencies exhibit significantly higher betas compared to traditional assets and other alternative asset classes. For instance, BTC-USD and ETH-USD have betas of 0.4680 and 0.5448, respectively, indicating they are more volatile and have higher systematic risk compared to equities, bonds, and commodities.
+Equities: Stocks like TSLA, AAPL, and AMZN also have relatively high betas, reflecting their sensitivity to market movements but generally lower than cryptocurrencies.
+Alternative Assets: Assets like VNQ (Real Estate) and PSP (Private Equity) show moderate betas, indicating lower volatility compared to stocks and cryptocurrencies.
+Expected Return:
+
+Cryptocurrencies: The expected returns for cryptocurrencies (e.g., BTC-USD, ETH-USD) are notably lower compared to traditional assets like equities and bonds. This suggests that while cryptocurrencies are more volatile, they do not compensate investors with higher expected returns within this period.
+Equities: Equities such as AAPL, MSFT, and GOOGL offer higher expected returns compared to cryptocurrencies, aligning with their historical performance in providing growth and income to investors.
+Alternative Assets: Assets like DJI (Dow Jones Industrial Average), despite having a very low beta, show a slightly higher expected return, which might indicate stability but lower potential for capital appreciation compared to high-beta assets.
+R-squared and p-value:
+
+The R-squared values indicate how well each asset's returns are explained by market returns (BITW market index). Higher R-squared values suggest that the asset's returns can be largely attributed to market movements.
+The p-values are generally very low across assets, indicating statistical significance in the relationship between their returns and market returns.
+Extent of Application of Existing Asset Models to Digital Assets
+The analysis suggests that existing alternative asset investing models, such as CAPM, can be applied to digital assets to some extent, but with notable considerations:
+
+Volatility and Risk: Cryptocurrencies exhibit significantly higher volatility (measured by beta) compared to traditional assets. This high volatility implies higher risk, which needs to be carefully managed in investment portfolios.
+Expected Returns: Cryptocurrencies generally offer lower expected returns compared to equities and other traditional assets over the observed period. This challenges the notion of higher returns associated with higher risk typically observed in traditional finance.
+Model Adaptation: While CAPM and similar models provide insights into risk and return relationships, they may need adjustments or additional factors (such as regulatory developments, technological advancements, and market sentiment) to better capture the unique characteristics of digital assets.
+Longer Time Horizons: Given the short period analyzed, longer-term data and analysis are crucial to draw more robust conclusions about the risk-return profiles and applicability of traditional asset models to digital assets.
+In conclusion, while existing asset models like CAPM can provide initial insights into the risk and return dynamics of cryptocurrencies and other digital assets, their unique characteristics necessitate further research and potentially tailored modeling approaches to fully understand and optimize investment strategies in this evolving asset class.
 
 \subsection{GARCH Model}
 
-- cryptocurrency are more volatile than traditional assets (standard deviation)
-- AIC and BIC values are negative, with DJI being the most negative
+The GARCH (Generalized Autoregressive Conditional Heteroskedasticity) model is evaluated here to assess its applicability in modeling the volatility of both traditional assets and digital assets, specifically cryptocurrencies. Here are the key findings and analysis based on the provided results:
 
-\subsection{Relative and Absolute Valuation Techniques}
+Volatility Comparison:
 
-By leveraging on-chain data and relative valuation models like the NVT ratio, investors and analysts can gain a deeper understanding of the intrinsic value and market dynamics of cryptocurrencies. These techniques help in identifying investment opportunities and assessing the fundamental health of different cryptocurrency networks.
+Cryptocurrencies vs. Traditional Assets: Cryptocurrencies exhibit significantly higher volatility compared to traditional assets. This is evident from the standard deviations of residuals, where digital assets like ETH-USD, SOL-USD, and SHIB-USD have noticeably higher values (e.g., ETH-USD: 0.036436, SOL-USD: 0.057214) compared to traditional assets like AAPL (0.015185) and AGG (0.004055). This highlights the inherent volatility and risk associated with digital assets.
+Model Fit Assessment:
 
-In conclusion, the integration of on-chain data and innovative valuation models provides a robust framework for analyzing and valuing cryptocurrencies. As the market for digital assets continues to evolve, these techniques will play a crucial role in guiding investment decisions and fostering a deeper understanding of the complex dynamics at play.
+AIC and BIC Values: The Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC) are used to evaluate the goodness of fit of the GARCH model. Lower AIC and BIC values indicate better model fit. In the provided table, both traditional assets and digital assets show negative AIC and BIC values, with DJI (Dow Jones Industrial Average) exhibiting the most negative values among traditional assets. Digital assets like BTC-USD, ETH-USD, and SOL-USD also show strong negative values, indicating that the GARCH model can effectively capture their volatility dynamics.
+Stationarity of Residuals:
 
+Augmented Dickey-Fuller (ADF) Test: The ADF test P-values for the residuals of all assets are extremely low (close to zero), suggesting that the residuals are stationary. This is essential as the GARCH model assumes stationary residuals for accurate volatility forecasting. The high significance of these tests across both traditional and digital assets validates the suitability of the GARCH model in capturing the volatility patterns.
 
-\subsection{NVT Model}
+The results suggest that the GARCH model can be applied effectively to digital assets, despite their unique characteristics such as high volatility and limited historical data. Here’s a summary of the model’s performance and its implications for digital asset investing:
 
-\subsection{Intrinsic Value Model}
--110 and 120
-\subsection{LSTM Model}
+Risk Management: GARCH models provide robust tools for managing the heightened volatility of cryptocurrencies. By accurately modeling volatility, investors can implement effective risk management strategies to mitigate potential losses.
+
+Forecasting: The ability of the GARCH model to forecast volatility helps in making informed investment decisions in digital assets. It allows investors to anticipate price fluctuations and adjust their portfolios accordingly.
+
+Challenges and Adaptations: While GARCH models perform well in capturing digital asset volatility, challenges remain due to the rapidly evolving nature of cryptocurrency markets. Adaptations may be necessary to account for factors like regulatory changes and technological advancements that impact digital asset prices.
+
+In conclusion, while traditional asset investing models, including the GARCH model, can be applied to digital assets, adaptations and innovations are essential to address their unique characteristics and ensure accurate risk assessment and forecasting in cryptocurrency markets. Continued research and development in modeling techniques will further enhance the applicability of these models to the dynamic landscape of digital assets.
+
+\subsection{LSTM Analysis}
+
+The LSTM (Long Short-Term Memory) model has been applied to predict the performance metrics (MSE, RMSE, MAE) for various cryptocurrencies and traditional assets. Here’s an analysis based on the provided results:
+
+Cryptocurrencies
+BTC-USD (Bitcoin)
+
+MSE: 122.7408, RMSE: 11.0788, MAE: 9.6324
+Bitcoin shows relatively high errors in MSE, RMSE, and MAE, indicating challenges in predicting its price movements accurately with the LSTM model.
+ETH-USD (Ethereum)
+
+MSE: 5.1563, RMSE: 2.2707, MAE: 1.7916
+Ethereum performs better than Bitcoin with significantly lower MSE, RMSE, and MAE, suggesting the LSTM model captures its price dynamics more effectively.
+SOL-USD (Solana)
+
+MSE: 66.9456, RMSE: 8.1820, MAE: 5.6560
+Solana exhibits high MSE and RMSE, indicating challenges in accurately predicting its price movements with the LSTM model.
+Other Cryptocurrencies (BNB-USD, XRP-USD, TON-USD, DOGE-USD, ADA-USD, SHIB-USD, AVAX-USD)
+
+These cryptocurrencies show varying degrees of prediction accuracy. Notably, SHIB-USD has the lowest errors across MSE, RMSE, and MAE, indicating better predictive performance.
+Traditional Assets
+AAPL, MSFT, AMZN, GOOGL (Tech Stocks)
+
+These stocks generally have lower errors in MSE, RMSE, and MAE compared to cryptocurrencies, reflecting the relatively stable and predictable nature of large-cap tech stocks.
+TSLA (Tesla), SPY (S&P 500 ETF), AGG (Bond ETF), PSP (Global Listed Private Equity ETF), VNQ (Real Estate ETF), SLV (Silver ETF), GLD (Gold ETF), USO (Oil ETF), DJI (Dow Jones Industrial Average)
+
+Traditional assets like TSLA, SPY, and DJI exhibit varying prediction errors. DJI, in particular, shows extremely high errors, suggesting challenges in predicting its movements with the LSTM model.
+Analysis and Conclusion
+Applicability of LSTM to Digital Assets
+
+LSTM models demonstrate varying success in predicting the prices of different cryptocurrencies. Cryptocurrencies like Ethereum and some others show promising results with lower errors, indicating potential applicability of LSTM in forecasting their price movements.
+Challenges and Considerations
+
+High errors observed in cryptocurrencies such as Bitcoin and Solana highlight the volatility and complexity of digital asset markets. Factors such as sudden price fluctuations and lack of historical data can pose challenges for accurate predictions with LSTM models.
+Comparison with Traditional Assets
+
+Traditional assets generally exhibit lower prediction errors compared to cryptocurrencies, reflecting their more stable and mature market characteristics. This suggests that LSTM models may require adaptations or enhancements to effectively handle the unique dynamics of digital assets.
+Future Directions
+
+Further research and development are needed to refine LSTM models for digital asset forecasting. Techniques like feature engineering, ensemble methods, and integrating external factors (e.g., sentiment analysis, macroeconomic indicators) could enhance predictive accuracy.
+In conclusion, while LSTM models show promise in predicting certain cryptocurrencies' prices, their application to digital assets requires careful consideration of the asset's volatility, data quality, and model robustness. Continued advancements in modeling techniques and data availability will be crucial in improving the efficacy of LSTM and other alternative asset investing models for digital assets.
