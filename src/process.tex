@@ -27,7 +27,7 @@ The market risk premium is the difference between the expected market return and
 
 Combining each component into the CAPM Model, we obtained the following results.
 
-\begin{table}[h]
+\begin{table}[ht]
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -80,36 +80,36 @@ More information can be found in appendix, please refer to \ref{appendix:capm_de
 \end{figure}
 
 
+\pagebreak
 \subsection{GARCH Model}
 
 To investigate the time-varying volatility of different financial assets via the GAR Model, we first calculated the daily returns of each asset. Next, we specified and fitted a GARCH(1,1) model to the return data for each asset. This model choice is common in finance for capturing volatility clustering. After fitting the models, we evaluated their performance using various criteria. This included examining summary statistics, such as the Akaike Information Criterion (AIC) and Bayesian Information Criterion (BIC), to assess model fit and complexity. Additionally, we analyzed residuals to ensure they exhibited characteristics of white noise and conducted stationarity tests to validate model assumptions. Finally, we performed out-of-sample forecasting to assess the model's predictive ability.
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{code/volatility-analysis/garch-with-mulit-assets/garch_forecast.png}
+    \includegraphics[width=300px]{code/volatility-analysis/garch-with-mulit-assets/garch_forecast.png}
     \caption{GARCH Volatility Forecast}
-    \label{fig:exp_return}
+    \label{fig:garch_forecast}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{code/volatility-analysis/garch-with-mulit-assets/aic_bic.png}
+    \includegraphics[width=300px]{code/volatility-analysis/garch-with-mulit-assets/aic_bic.png}
     \caption{Comparison between AIC and BIC Values}
-    \label{fig:exp_return}
+    \label{fig:aic_bic}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{code/volatility-analysis/garch-with-mulit-assets/standard_deviation.png}
+    \includegraphics[width=300px]{code/volatility-analysis/garch-with-mulit-assets/standard_deviation.png}
     \caption{Standard Deviation of Residuals}
-    \label{fig:exp_return}
+    \label{fig:standard_deviation}
 \end{figure}
 
+\pagebreak
 \subsection{LSTM Model}
 
-Preprocessing Steps
-
-Historical price data for the top 10 cryptocurrencies were fetched using the yfinance library, covering the period from January 1, 2022, to January 1, 2024.
+Historical price data for the top 10 cryptocurrencies were fetched using the yfinance\cite{yfinance} library, covering the period from January 1, 2022, to January 1, 2024.
 
 The MinMaxScaler from scikit-learn\cite{scikit-learn} was used to normalize the 'Adj Close' price data to a range between 0 and 1. This is crucial for LSTM models, which are sensitive to the scale of input data.
 
@@ -130,56 +130,56 @@ In our research, we developed a Bidirectional Long Short-Term Memory (LSTM) mode
     \item {Input Layer}:
     \begin{itemize}
         \item Shape: (WINDOW\_SIZE, Number of Features in Input)
-        \item Key Value: \texttt{input\_shape = (WINDOW\_SIZE, X\_train.shape[-1])}
+        \item \texttt{input\_shape = (WINDOW\_SIZE, X\_train.shape[-1])}
     \end{itemize}
 
     \item {First Bidirectional LSTM Layer}:
     \begin{itemize}
         \item Units: WINDOW\_SIZE = 99
         \item Return Sequences: True
-        \item Key Value: \texttt{model.add(Bidirectional(LSTM(WINDOW\_SIZE, return\_sequences=True)))}
+        \item \texttt{model.add(Bidirectional(LSTM(WINDOW\_SIZE, return\_sequences=True)))}
     \end{itemize}
 
     \item {First Dropout Layer}:
     \begin{itemize}
         \item Rate: DROPOUT = 0.2
-        \item Key Value: \texttt{model.add(Dropout(rate=DROPOUT))}
+        \item \texttt{model.add(Dropout(rate=DROPOUT))}
     \end{itemize}
 
     \item {Second Bidirectional LSTM Layer}:
     \begin{itemize}
         \item Units: WINDOW\_SIZE * 2 = 198
         \item Return Sequences: True
-        \item Key Value: \texttt{model.add(Bidirectional(LSTM(WINDOW\_SIZE * 2, return\_sequences=True)))}
+        \item \texttt{model.add(Bidirectional(LSTM(WINDOW\_SIZE * 2, return\_sequences=True)))}
     \end{itemize}
 
     \item {Second Dropout Layer}:
     \begin{itemize}
         \item Rate: DROPOUT = 0.2
-        \item Key Value: \texttt{model.add(Dropout(rate=DROPOUT))}
+        \item \texttt{model.add(Dropout(rate=DROPOUT))}
     \end{itemize}
 
     \item {Third Bidirectional LSTM Layer}:
     \begin{itemize}
         \item Units: WINDOW\_SIZE = 99
         \item Return Sequences: False
-        \item Key Value: \texttt{model.add(Bidirectional(LSTM(WINDOW\_SIZE, return\_sequences=False)))}
+        \item \texttt{model.add(Bidirectional(LSTM(WINDOW\_SIZE, return\_sequences=False)))}
     \end{itemize}
 
     \item {Dense Layer}:
     \begin{itemize}
         \item Units: 1
-        \item Key Value: \texttt{model.add(Dense(units=1))}
+        \item \texttt{model.add(Dense(units=1))}
     \end{itemize}
 
     \item {Activation Layer}:
     \begin{itemize}
         \item Activation Function: Linear
-        \item Key Value: \texttt{model.add(Activation('linear'))}
+        \item \texttt{model.add(Activation('linear'))}
     \end{itemize}
 \end{enumerate}
 
-\section*{Model Compilation}
+\subsection{Model Compilation}
 
 \begin{itemize}
     \item Loss Function: Mean Squared Error
@@ -187,18 +187,15 @@ In our research, we developed a Bidirectional Long Short-Term Memory (LSTM) mode
     \item Key Value: \texttt{model.compile(loss='mean\_squared\_error', optimizer='adam')}
 \end{itemize}
 
-\section*{Model Training Parameters}
+\subsection{Model Training Parameters}
 
 \begin{itemize}
     \item Epochs: 50
     \item Batch Size: BATCH\_SIZE = 64
     \item Shuffle: False
     \item Validation Split: 10\%
-    \item Key Value: \texttt{model.fit(X\_train, y\_train, epochs=50, batch\_size=BATCH\_SIZE, shuffle=False, validation\_split=0.1)}
 \end{itemize}
 
 \section*{Summary}
 
-We utilized a Bidirectional LSTM model with three layers of bidirectional LSTMs, each followed by dropout layers to prevent overfitting. The final dense layer with a linear activation function is used for regression. Our model is compiled using the mean squared error loss function and the Adam optimizer, and trained over 50 epochs with a batch size of 64, using 10\% of the training data for validation.
-
-This architecture effectively captures temporal dependencies in both directions, making it suitable for time series forecasting tasks.
+We utilized a Bidirectional LSTM model with three layers of bidirectional LSTMs, each followed by dropout layers to prevent overfitting. The final dense layer with a linear activation function is used for regression. Our model is compiled using the mean squared error loss function and the Adam optimizer, and trained over 50 epochs with a batch size of 64, using 10\% of the training data for validation. This architecture effectively captures temporal dependencies in both directions, making it suitable for time series forecasting tasks.

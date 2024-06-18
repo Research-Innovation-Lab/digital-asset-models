@@ -21,29 +21,27 @@ Additionally, LSTMs have a cell state that runs through the entire chain of LSTM
 
 An definite example of the equations that govern the operations of an LSTM unit:
 
-\begin{align*}
-f_t & = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f) \\
-i_t & = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i) \\
-\tilde{C}_t & = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C) \\
-C_t & = f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t \\
-o_t & = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o) \\
-h_t & = o_t \cdot \tanh(C_t)
-\end{align*}
+\begin{equation}
+\begin{aligned}
+f_t & = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f), \\
+i_t & = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i), \\
+\tilde{C}_t & = \tanh(W_C \cdot [h_{t-1}, x_t] + b_C), \\
+C_t & = f_t \cdot C_{t-1} + i_t \cdot \tilde{C}_t, \\
+o_t & = \sigma(W_o \cdot [h_{t-1}, x_t] + b_o), \\
+h_t & = o_t \cdot \tanh(C_t).
+\end{aligned}
+\end{equation}
 
 In these equations:
 
-$\bullet$ $f_t$, $i_t$, and $o_t$ represent the forget gate, input gate, and output gate activations, respectively. 
+\begin{itemize}
+\item $f_t$, $i_t$, and $o_t$ represent the forget gate, input gate, and output gate activations, respectively
+\item $\tilde{C}_t$ denotes the candidate cell state.
+\item $C_t$ represents the updated cell state.
+\item $h_t$ is the output of the LSTM unit at time step $t$.
+\item $W_f$, $W_i$, $W_C$, and $W_o$ are weight matrices for the forget gate, input gate, candidate cell state, and output gate, respectively.
+\item $b_f$, $b_i$, $b_C$, and $b_o$ are bias vectors.
 
-$\bullet$ $\tilde{C}_t$ denotes the candidate cell state.
-
-$\bullet$ $C_t$ represents the updated cell state.
-
-$\bullet$ $h_t$ is the output of the LSTM unit at time step $t$.
-
-$\bullet$ $x_t$ is the input at time step $t$.
-
-$\bullet$ $W_f$, $W_i$, $W_C$, and $W_o$ are weight matrices for the forget gate, input gate, candidate cell state, and output gate, respectively.
-    
-$\bullet$ $b_f$, $b_i$, $b_C$, and $b_o$ are bias vectors.
+\end{itemize}
 
 These equations describe the sequential computations performed by an LSTM unit at each time step, allowing it to capture and process temporal dependencies in the input data.

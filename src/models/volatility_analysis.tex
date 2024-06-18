@@ -20,14 +20,12 @@ dS_t = \mu S_t dt + \sigma S_t dW_t
 
 Where:
 
-$ \bullet S_t $ is the price of the asset at time $ t $.
- 
-$ \bullet \mu $ is the average rate of return, or drift.
-
-$ \bullet \sigma $ is the volatility, or standard deviation of returns.
-
-$ \bullet dW_t $ represents the random fluctuation in the asset's price.
-
+\begin{itemize}
+    \item $S_t$ is the price of the asset at time $t$.
+    \item $\mu$ is the average rate of return, or drift.
+    \item $\sigma$ is the volatility, or standard deviation of returns.
+    \item $dW_t$ represents the random fluctuation in the asset's price.
+\end{itemize}
 
 This equation states that the change in the asset price over a small time interval \( dt \) consists of two components: a deterministic component represented by \( \mu S_t dt \), and a random component represented by \( \sigma S_t dW_t \).
 
@@ -43,13 +41,11 @@ The basic form of the GARCH(p, q) model is:
 
 Where:
 
-$ \bullet \sigma_{t}^2 $ is the conditional variance at time $ t $,
-
-$ \bullet \omega $ is the constant term,
-
-$ \bullet \varepsilon_{t} $ is the error term at time $ t $,
-
-$ \bullet \alpha_{i} $ and $ \beta_{i} $ are the coefficients for the squared error terms and the conditional variances at lag $ i $ respectively,
-
-$ \bullet p $ and $ q $ are the orders of the autoregressive and moving average terms respectively.
-
+\begin{itemize}
+    \item $f_t$, $i_t$, and $o_t$ represent the forget gate, input gate, and output gate activations, respectively.
+    \item $\tilde{C}_t$ denotes the candidate cell state.
+    \item $C_t$ represents the updated cell state.
+    \item $h_t$ is the output of the LSTM unit at time step $t$.
+    \item $W_f$, $W_i$, $W_C$, and $W_o$ are weight matrices for the forget gate, input gate, candidate cell state, and output gate, respectively.
+    \item $b_f$, $b_i$, $b_C$, and $b_o$ are bias vectors.
+\end{itemize}
